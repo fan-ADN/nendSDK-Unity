@@ -2,9 +2,7 @@
 //  NADInterstitial.h
 //  NendAd
 //
-//  Created by ADN division on 2014/05/12.
-//  Copyright (c) 2014年 F@N Communications, Inc. All rights reserved.
-//
+//  インタースティシャル広告クラス
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -55,10 +53,14 @@ typedef enum {
  */
 - (void) didFinishLoadInterstitialAdWithStatus:(NADInterstitialStatusCode)status;
 
+- (void) didFinishLoadInterstitialAdWithStatus:(NADInterstitialStatusCode)status spotId:(NSString *)spotId;
+
 /**
  Notify the event of the ad click.
  */
 - (void) didClickWithType:(NADInterstitialClickType)type;
+
+- (void) didClickWithType:(NADInterstitialClickType)type spotId:(NSString *)spotId;
 
 @end
 
@@ -82,7 +84,7 @@ typedef enum {
 /**
  Supported Orientations.
  */
-@property (nonatomic, assign) NSArray* supportedOrientations;
+@property (nonatomic, retain) NSArray* supportedOrientations;
 
 ///-----------------------------------------------
 /// @name Creating and Initializing Nend Instance
@@ -122,6 +124,8 @@ typedef enum {
  @return NADInterstitialShowResult
  */
 - (NADInterstitialShowResult) showAd;
+
+- (NADInterstitialShowResult) showAdWithSpotId:(NSString *)spotId;
 
 /**
  Dismiss the Interstitial-AD.
