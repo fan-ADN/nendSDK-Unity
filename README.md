@@ -32,9 +32,9 @@ Usage
 
 * NendUnitySampleA  
 Androidプロジェクトにエクスポート後、Google Play servicesライブラリを追加し、  
-AndroidManifest.xml内の以下コメントアウトを削除してビルドしてください。
+AndroidManifest.xml内の以下コメントアウトを外してビルドしてください。
 
-`<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />`
+`<!-- <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" /> -->`
 
 * NendUnitySampleU  
 Unityからapkファイルを作成し、実機にインストールしてください。  
