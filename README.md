@@ -32,7 +32,7 @@ Usage
 
 * NendUnitySampleA  
 Androidプロジェクトにエクスポート後、Google Play servicesライブラリを追加し、  
-AndroidManifest.xml内の以下コメントアウトを外してビルドしてください。
+AndroidManifest.xml内の以下コメントアウトを外してeclipseでビルドしてください。
 
 ```
 <!--
