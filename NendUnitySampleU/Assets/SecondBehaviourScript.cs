@@ -51,7 +51,11 @@ public class SecondBehaviourScript : MonoBehaviour {
 
 	private IEnumerator ShowAdDelay() {
 		yield return new WaitForSeconds(0.5f);
-		NendAdInterstitial.Instance.Show();
+#if UNITY_IPHONE
+		NendAdInterstitial.Instance.Show("213208");
+#elif UNITY_ANDROID
+		NendAdInterstitial.Instance.Show("213206");
+#endif
 	}
 
 	private void GoBack() {
@@ -89,62 +93,67 @@ public class SecondBehaviourScript : MonoBehaviour {
 		}
 	}
 
-	private class NendAdInterstitialCallbackImpl : NendAdInterstitialCallback
+	private class NendAdInterstitialCallbackImpl : NendAdInterstitialCallbackWithSpot
 	{
-		public void OnFinishLoadInterstitialAd (NendAdInterstitialStatusCode statusCode)
+		public void OnFinishLoadInterstitialAd (NendAdInterstitialStatusCode statusCode, string spotId)
 		{
 			switch (statusCode) {
 			case NendAdInterstitialStatusCode.SUCCESS:
-				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: SUCCESS");
+				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: SUCCESS, " + spotId);
 				break;
 			case NendAdInterstitialStatusCode.INVALID_RESPONSE_TYPE:
-				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: INVALID_RESPONSE_TYPE");
+				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: INVALID_RESPONSE_TYPE, " + spotId);
 				break;
 			case NendAdInterstitialStatusCode.FAILED_AD_REQUEST:
-				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: FAILED_AD_REQUEST");
+				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: FAILED_AD_REQUEST, " + spotId);
 				break;
 			case NendAdInterstitialStatusCode.FAILED_AD_DOWNLOAD:
-				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: FAILED_AD_DOWNLOAD");
+				UnityEngine.Debug.Log(">> OnFinishLoadInterstitialAd: FAILED_AD_DOWNLOAD, " + spotId);
 				break;
 			}
 		}
 		
-		public void OnClickInterstitialAd (NendAdInterstitialClickType clickType)
+		public void OnClickInterstitialAd (NendAdInterstitialClickType clickType, string spotId)
 		{
 			switch (clickType) {
 			case NendAdInterstitialClickType.DOWNLOAD:
-				UnityEngine.Debug.Log(">> OnClickInterstitialAd: DOWNLOAD");
+				UnityEngine.Debug.Log(">> OnClickInterstitialAd: DOWNLOAD, " + spotId);
 				break;
 			case NendAdInterstitialClickType.CLOSE:
-				UnityEngine.Debug.Log(">> OnClickInterstitialAd: CLOSE");
+				UnityEngine.Debug.Log(">> OnClickInterstitialAd: CLOSE, " + spotId);
 				break;
 			case NendAdInterstitialClickType.EXIT:
-				UnityEngine.Debug.Log(">> OnClickInterstitialAd: EXIT");
+				UnityEngine.Debug.Log(">> OnClickInterstitialAd: EXIT, " + spotId);
 				break;
 			}
 		}
 		
-		public void OnShowInterstitialAd (NendAdInterstitialShowResult showResult) {
+		public void OnShowInterstitialAd (NendAdInterstitialShowResult showResult, string spotId)
+		{
 			switch ( showResult ) {
 			case NendAdInterstitialShowResult.AD_SHOW_SUCCESS:
-				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_SHOW_SUCCESS");
+				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_SHOW_SUCCESS, " + spotId);
 				break;
 			case NendAdInterstitialShowResult.AD_SHOW_ALREADY:
-				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_SHOW_ALREADY");
+				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_SHOW_ALREADY, " + spotId);
 				break;
 			case NendAdInterstitialShowResult.AD_REQUEST_INCOMPLETE:
-				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_REQUEST_INCOMPLETE");
+				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_REQUEST_INCOMPLETE, " + spotId);
 				break;
 			case NendAdInterstitialShowResult.AD_LOAD_INCOMPLETE:
-				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_LOAD_INCOMPLETE");
+				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_LOAD_INCOMPLETE, " + spotId);
 				break;
 			case NendAdInterstitialShowResult.AD_FREQUENCY_NOT_RECHABLE:
-				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_FREQUENCY_NOT_RECHABLE");
+				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_FREQUENCY_NOT_RECHABLE, " + spotId);
 				break;
 			case NendAdInterstitialShowResult.AD_DOWNLOAD_INCOMPLETE:
-				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_DOWNLOAD_INCOMPLETE");
+				UnityEngine.Debug.Log(">> OnShowInterstitialAd: AD_DOWNLOAD_INCOMPLETE, " + spotId);
 				break;
 			}		
 		}
+		
+		public void OnFinishLoadInterstitialAd (NendAdInterstitialStatusCode statusCode){ /** nop */ }
+		public void OnClickInterstitialAd (NendAdInterstitialClickType clickType) { /** nop */ }
+		public void OnShowInterstitialAd (NendAdInterstitialShowResult showResult) { /** nop */ }
 	}
 }

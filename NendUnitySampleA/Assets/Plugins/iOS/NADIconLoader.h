@@ -2,8 +2,6 @@
 //  NADIconLoader.h
 //  NendAd
 //
-//  Ver 2.5.2
-//
 //  アイコン型広告ローダークラス
 
 #import <Foundation/Foundation.h>

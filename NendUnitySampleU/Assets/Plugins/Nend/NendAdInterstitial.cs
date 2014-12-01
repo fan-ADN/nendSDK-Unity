@@ -48,22 +48,44 @@ public interface NendAdInterstitialCallback
 	void OnShowInterstitialAd(NendAdInterstitialShowResult showResult);
 }
 
+public interface NendAdInterstitialCallbackWithSpot : NendAdInterstitialCallback
+{
+	/// <summary>
+	/// Raises the finish load interstitial ad event.
+	/// </summary>
+	/// <param name="statusCode">Status code.</param>
+	/// <param name="spotId">Spot identifier.</param>
+	void OnFinishLoadInterstitialAd (NendAdInterstitialStatusCode statusCode, string spotId);
+
+	/// <summary>
+	/// Raises the click interstitial ad event.
+	/// </summary>
+	/// <param name="clickType">Click type.</param>
+	/// <param name="spotId">Spot identifier.</param>
+	void OnClickInterstitialAd (NendAdInterstitialClickType clickType, string spotId);
+
+	/// <summary>
+	/// Raises the show interstitial ad event.
+	/// </summary>
+	/// <param name="showResult">Show result.</param>
+	/// <param name="spotId">Spot identifier.</param>
+	void OnShowInterstitialAd (NendAdInterstitialShowResult showResult, string spotId);
+}
+
 public class NendAdInterstitial : MonoBehaviour {
 	
 	[SerializeField]
 	bool outputLog = false;
 
 	private static NendAdInterstitial _instance = null;
-	public static NendAdInterstitial Instance 
-	{
+	public static NendAdInterstitial Instance {
 		get {
 			return _instance;
 		}
 	}
 
 	private NendAdInterstitialCallback _callback = null;
-	public NendAdInterstitialCallback Callback
-	{
+	public NendAdInterstitialCallback Callback {
 		set {
 			_callback = value;
 		}
@@ -108,7 +130,16 @@ public class NendAdInterstitial : MonoBehaviour {
 	/// </summary>
 	public void Show () 
 	{
-		_ShowInterstitialAd();
+		_ShowInterstitialAd ("");
+	}
+
+	/// <summary>
+	/// Show the specified spotId.
+	/// </summary>
+	/// <param name="spotId">Spot identifier.</param>
+	public void Show (string spotId)
+	{
+		_ShowInterstitialAd (spotId);
 	}
 
 	/// <summary>
@@ -118,7 +149,18 @@ public class NendAdInterstitial : MonoBehaviour {
 	public void Finish () 
 	{
 #if UNITY_ANDROID && !UNITY_EDITOR
-		_ShowFinishInterstitialAd();
+		_ShowFinishInterstitialAd("");
+#endif
+	}
+
+	/// <summary>
+	/// Show this instance at the end.
+	/// </summary>
+	/// <param name="spotId">Spot identifier.</param>
+	public void Finish (string spotId)
+	{
+#if UNITY_ANDROID && !UNITY_EDITOR
+		_ShowFinishInterstitialAd(spotId);
 #endif
 	}
 
@@ -132,22 +174,52 @@ public class NendAdInterstitial : MonoBehaviour {
 
 	void NendAdInterstitial_OnFinishLoad(string message)
 	{
-		if ( null != _callback ) {
-			_callback.OnFinishLoadInterstitialAd((NendAdInterstitialStatusCode)int.Parse(message));
+		if ( null == _callback ) {
+			return;
+		}
+		string[] array = message.Split(':');
+		if ( 2 == array.Length ) {
+			NendAdInterstitialStatusCode status = (NendAdInterstitialStatusCode)int.Parse(array[0]);
+			string spotId = array[1];
+			if ( _callback is NendAdInterstitialCallbackWithSpot ) {
+				((NendAdInterstitialCallbackWithSpot)_callback).OnFinishLoadInterstitialAd(status, spotId);
+			} else {
+				_callback.OnFinishLoadInterstitialAd(status);
+			}			
 		}
 	}
 
 	void NendAdInterstitial_OnClickAd(string message)
 	{
-		if ( null != _callback ) {
-			_callback.OnClickInterstitialAd((NendAdInterstitialClickType)int.Parse(message));
-		}		
+		if ( null == _callback ) {
+			return;
+		}
+		string[] array = message.Split(':');
+		if ( 2 == array.Length ) {
+			NendAdInterstitialClickType type = (NendAdInterstitialClickType)int.Parse(array[0]);
+			string spotId = array[1];
+			if ( _callback is NendAdInterstitialCallbackWithSpot ) {
+				((NendAdInterstitialCallbackWithSpot)_callback).OnClickInterstitialAd(type, spotId);
+			} else {
+				_callback.OnClickInterstitialAd(type);
+			}			
+		}
 	}
 
 	void NendAdInterstitial_OnShowAd(string message)
 	{
-		if ( null != _callback ) {
-			_callback.OnShowInterstitialAd((NendAdInterstitialShowResult)int.Parse(message));	
+		if ( null == _callback ) {
+			return;
+		}
+		string[] array = message.Split(':');
+		if ( 2 == array.Length ) {
+			NendAdInterstitialShowResult result = (NendAdInterstitialShowResult)int.Parse(array[0]);
+			string spotId = array[1];
+			if ( _callback is NendAdInterstitialCallbackWithSpot ) {
+				((NendAdInterstitialCallbackWithSpot)_callback).OnShowInterstitialAd(result, spotId);
+			} else {
+				_callback.OnShowInterstitialAd(result);
+			}
 		}
 	}
 
@@ -155,26 +227,26 @@ public class NendAdInterstitial : MonoBehaviour {
 	[DllImport ("__Internal")]
 	private static extern void _LoadInterstitialAd(string apiKey, string spotId, bool isOutputLog);
 	[DllImport ("__Internal")]
-	private static extern void _ShowInterstitialAd();
+	private static extern void _ShowInterstitialAd(string spotId);
 	[DllImport ("__Internal")]
 	private static extern void _DismissInterstitialAd();
 #elif UNITY_ANDROID && !UNITY_EDITOR
 	private static void _LoadInterstitialAd(string apiKey, string spotId, bool isOutputLog) { 
 		_plugin.CallStatic("_LoadInterstitialAd", apiKey, spotId, isOutputLog); 
 	}
-	private static void _ShowInterstitialAd() { 
-		_plugin.CallStatic("_ShowInterstitialAd"); 
+	private static void _ShowInterstitialAd(string spotId) { 
+		_plugin.CallStatic("_ShowInterstitialAd", spotId); 
 	}
-	private static void _ShowFinishInterstitialAd() { 
-		_plugin.CallStatic("_ShowFinishInterstitialAd"); 
+	private static void _ShowFinishInterstitialAd(string spotId) { 
+		_plugin.CallStatic("_ShowFinishInterstitialAd", spotId); 
 	}
 	private static void _DismissInterstitialAd() { 
 		_plugin.CallStatic("_DismissInterstitialAd"); 
 	}
 #else
 	private static void _LoadInterstitialAd(string apiKey, string spotId, bool isOutputLog){ UnityEngine.Debug.Log("_LoadInterstitialAd() : " + apiKey + ", " + spotId + ", " + isOutputLog); }
-	private static void _ShowInterstitialAd(){ UnityEngine.Debug.Log("_ShowInterstitialAd()"); }
-	private static void _ShowFinishInterstitialAd(){ UnityEngine.Debug.Log("_ShowFinishInterstitialAd()"); }
+	private static void _ShowInterstitialAd(string spotId){ UnityEngine.Debug.Log("_ShowInterstitialAd() : " + spotId); }
+	private static void _ShowFinishInterstitialAd(string spotId){ UnityEngine.Debug.Log("_ShowFinishInterstitialAd() : " + spotId); }
 	private static void _DismissInterstitialAd(){ UnityEngine.Debug.Log("_DismissInterstitialAd()"); }
 #endif
 }

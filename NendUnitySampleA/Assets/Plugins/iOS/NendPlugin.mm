@@ -188,6 +188,14 @@ NSInteger InterstitialClickTypeToInteger(NADInterstitialClickType type)
     }
 }
 
+BOOL ShouldAutorotateIMP(id self, SEL _cmd)
+{
+    if ( [UnityGetGLViewController() respondsToSelector:@selector(shouldAutorotate)] )
+        return [UnityGetGLViewController() shouldAutorotate];
+    else
+        return YES;
+}
+
 NSUInteger SupportedInterfaceOrientationsIMP(id self, SEL _cmd)
 {
     if ( [UnityGetGLViewController() respondsToSelector:@selector(supportedInterfaceOrientations)] )
@@ -210,7 +218,10 @@ void AddRotateMethodToInterstitialViewController()
     dispatch_once(&onceToken, ^{
         Class cls = NSClassFromString(@"NADInterstitialViewController");
         if ( _ios60orNewer )
-            class_addMethod(cls, @selector(supportedInterfaceOrientations), (IMP)&SupportedInterfaceOrientationsIMP, "I8@0:4");
+        {
+            class_replaceMethod(cls, @selector(shouldAutorotate), (IMP)&ShouldAutorotateIMP, "c8@0:4");
+            class_replaceMethod(cls, @selector(supportedInterfaceOrientations), (IMP)&SupportedInterfaceOrientationsIMP, "I8@0:4");
+        }
         else
             class_replaceMethod(cls, @selector(shouldAutorotateToInterfaceOrientation:), (IMP)&ShouldAutorotateToInterfaceOrientationIMP, "c12@0:4i8");
     });
@@ -243,7 +254,7 @@ void AddRotateMethodToInterstitialViewController()
 @interface NADInterstitialEventDispatcher : NSObject <NADInterstitialDelegate>
 
 + (instancetype) sharedDispatcher;
-- (void) dispatchShowResult:(NADInterstitialShowResult)result;
+- (void) dispatchShowResult:(NADInterstitialShowResult)result spotId:(NSString *)spotId;
 
 @end
 
@@ -445,7 +456,7 @@ void AddRotateMethodToInterstitialViewController()
     return instance;
 }
 
-- (void) dispatchShowResult:(NADInterstitialShowResult)result
+- (void) dispatchShowResult:(NADInterstitialShowResult)result spotId:(NSString *)spotId
 {
     NSInteger value = -1;
     switch ( result )
@@ -469,20 +480,36 @@ void AddRotateMethodToInterstitialViewController()
             value = 5;
             break;
     }
-    NSString* message = [[NSNumber numberWithInteger:value] stringValue];
+    NSString* message = [NSString stringWithFormat:@"%d:%@", value, spotId];
     UnitySendMessage(INTERSTITIAL_GAME_OBJECT, "NendAdInterstitial_OnShowAd", MakeStringCopy([message UTF8String]));
 }
 
 - (void) didFinishLoadInterstitialAdWithStatus:(NADInterstitialStatusCode)status
 {
     NSInteger value = InterstitialStatusCodeToInteger(status);
-    UnitySendMessage(INTERSTITIAL_GAME_OBJECT, "NendAdInterstitial_OnFinishLoad", MakeStringCopy([[[NSNumber numberWithInteger:value] stringValue] UTF8String]));
+    NSString* message = [[NSNumber numberWithInteger:value] stringValue];
+    UnitySendMessage(INTERSTITIAL_GAME_OBJECT, "NendAdInterstitial_OnFinishLoad", MakeStringCopy([message UTF8String]));
+}
+
+- (void) didFinishLoadInterstitialAdWithStatus:(NADInterstitialStatusCode)status spotId:(NSString *)spotId
+{
+    NSInteger value = InterstitialStatusCodeToInteger(status);
+    NSString* message = [NSString stringWithFormat:@"%d:%@", value, spotId];
+    UnitySendMessage(INTERSTITIAL_GAME_OBJECT, "NendAdInterstitial_OnFinishLoad", MakeStringCopy([message UTF8String]));
 }
 
 - (void) didClickWithType:(NADInterstitialClickType)type
 {
     NSInteger value = InterstitialClickTypeToInteger(type);
-    UnitySendMessage(INTERSTITIAL_GAME_OBJECT, "NendAdInterstitial_OnClickAd", MakeStringCopy([[[NSNumber numberWithInteger:value] stringValue] UTF8String]));
+    NSString* message = [[NSNumber numberWithInteger:value] stringValue];
+    UnitySendMessage(INTERSTITIAL_GAME_OBJECT, "NendAdInterstitial_OnClickAd", MakeStringCopy([message UTF8String]));
+}
+
+- (void) didClickWithType:(NADInterstitialClickType)type spotId:(NSString *)spotId
+{
+    NSInteger value = InterstitialClickTypeToInteger(type);
+    NSString* message = [NSString stringWithFormat:@"%d:%@", value, spotId];
+    UnitySendMessage(INTERSTITIAL_GAME_OBJECT, "NendAdInterstitial_OnClickAd", MakeStringCopy([message UTF8String]));
 }
 
 @end
@@ -1077,10 +1104,16 @@ extern "C"
         [[NADInterstitial sharedInstance] loadAdWithApiKey:CreateNSString(apiKey) spotId:CreateNSString(spotId)];
     }
     
-    void _ShowInterstitialAd()
+    void _ShowInterstitialAd(const char* spotId)
     {
-        NADInterstitialShowResult result = [[NADInterstitial sharedInstance] showAd];
-        [[NADInterstitialEventDispatcher sharedDispatcher] dispatchShowResult:result];
+        NSString* spot = CreateNSString(spotId);
+        NADInterstitialShowResult result;
+        if ( spot && 0 < spot.length )
+            result = [[NADInterstitial sharedInstance] showAdWithSpotId:spot];
+        else
+            result = [[NADInterstitial sharedInstance] showAd];
+        
+        [[NADInterstitialEventDispatcher sharedDispatcher] dispatchShowResult:result spotId:spot];
     }
     
     void _DismissInterstitialAd()
