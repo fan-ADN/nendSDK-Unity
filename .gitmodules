@@ -1,0 +1,4 @@
+[submodule "docs"]
+	path = docs
+	url = https://github.com/fan-ADN/nendSDK-Unity.git
+	branch = gh-pages
