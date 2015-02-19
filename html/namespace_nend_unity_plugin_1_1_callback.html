@@ -136,6 +136,17 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a66432900696cae54e04798d6f3a3892d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of ad click.  <a href="namespace_nend_unity_plugin_1_1_callback.html#a66432900696cae54e04798d6f3a3892d">More...</a><br /></td></tr>
 <tr class="separator:a66432900696cae54e04798d6f3a3892d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411d67bb43edb2066e79d8b07d1d24cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cd">NendErrorCode</a> : int { <br />
+&#160;&#160;<a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cdafde588e0fa71c14475fae982e559d2b1">NendErrorCode.AD_SIZE_TOO_LARGE</a> = 0, 
+<a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cda8f6575bd42a0331283412beeb9ac0895">NendErrorCode.INVALID_RESPONSE_TYPE</a>, 
+<a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cda97dcd033dc8770f9cc8762aede775308">NendErrorCode.FAILED_AD_REQUEST</a>, 
+<a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cdad2916b89cc7b34cd48b603e339016ec9">NendErrorCode.FAILED_AD_DOWNLOAD</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cda81bf3272bed20a4312fab10df5cea0e8">NendErrorCode.AD_SIZE_DIFFERENCES</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a411d67bb43edb2066e79d8b07d1d24cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error code of ad.  <a href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cd">More...</a><br /></td></tr>
+<tr class="separator:a411d67bb43edb2066e79d8b07d1d24cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="acda9f80521c8e1306a784491859fa2aa"></a>
@@ -226,10 +237,41 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a411d67bb43edb2066e79d8b07d1d24cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cd">NendUnityPlugin.Callback.NendErrorCode</a> : int</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The error code of ad. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a411d67bb43edb2066e79d8b07d1d24cdafde588e0fa71c14475fae982e559d2b1"></a>AD_SIZE_TOO_LARGE&#160;</td><td class="fielddoc">
+<p>Ad size is larger than the display size. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a411d67bb43edb2066e79d8b07d1d24cda8f6575bd42a0331283412beeb9ac0895"></a>INVALID_RESPONSE_TYPE&#160;</td><td class="fielddoc">
+<p>The response type is invalid. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a411d67bb43edb2066e79d8b07d1d24cda97dcd033dc8770f9cc8762aede775308"></a>FAILED_AD_REQUEST&#160;</td><td class="fielddoc">
+<p>Failed to ad request. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a411d67bb43edb2066e79d8b07d1d24cdad2916b89cc7b34cd48b603e339016ec9"></a>FAILED_AD_DOWNLOAD&#160;</td><td class="fielddoc">
+<p>Failed to ad download. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a411d67bb43edb2066e79d8b07d1d24cda81bf3272bed20a4312fab10df5cea0e8"></a>AD_SIZE_DIFFERENCES&#160;</td><td class="fielddoc">
+<p>Gets the size and request size is different. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 18 2015 11:43:53 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 19 2015 10:08:35 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

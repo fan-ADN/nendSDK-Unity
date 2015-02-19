@@ -10,5 +10,6 @@ var searchData=
   ['nendadinterstitial',['NendAdInterstitial',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html',1,'NendUnityPlugin::AD']]],
   ['nendadinterstitialcallback',['NendAdInterstitialCallback',['../interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_interstitial_callback.html',1,'NendUnityPlugin::Callback']]],
   ['nendadinterstitialcallbackwithspot',['NendAdInterstitialCallbackWithSpot',['../interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_interstitial_callback_with_spot.html',1,'NendUnityPlugin::Callback']]],
+  ['nendadlayoutbuilder',['NendAdLayoutBuilder',['../interface_nend_unity_plugin_1_1_layout_1_1_nend_ad_layout_builder.html',1,'NendUnityPlugin::Layout']]],
   ['nendutils',['NendUtils',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html',1,'NendUnityPlugin::Common']]]
 ];
