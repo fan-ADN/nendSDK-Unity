@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
@@ -90,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">NendUnityPlugin.AD.NendAdIcon Class Reference</div>  </div>
@@ -134,6 +136,21 @@ Properties</h2></td></tr>
 <tr class="memitem:a573148ddbed217c6580ba232f4994e2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_icon_callback.html">NendAdIconCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#a573148ddbed217c6580ba232f4994e2e">Callback</a><code> [set]</code></td></tr>
 <tr class="memdesc:a573148ddbed217c6580ba232f4994e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callback.  <a href="#a573148ddbed217c6580ba232f4994e2e">More...</a><br /></td></tr>
 <tr class="separator:a573148ddbed217c6580ba232f4994e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a7af9f94177b47ba5b55bf5f856641b9a"><td class="memItemLeft" align="right" valign="top">EventHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#a7af9f94177b47ba5b55bf5f856641b9a">AdLoaded</a></td></tr>
+<tr class="memdesc:a7af9f94177b47ba5b55bf5f856641b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when ad loaded.  <a href="#a7af9f94177b47ba5b55bf5f856641b9a">More...</a><br /></td></tr>
+<tr class="separator:a7af9f94177b47ba5b55bf5f856641b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa627690fae70ac5d417519885d84db6"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="class_nend_unity_plugin_1_1_common_1_1_nend_ad_error_event_args.html">NendAdErrorEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#afa627690fae70ac5d417519885d84db6">AdFailedToReceive</a></td></tr>
+<tr class="memdesc:afa627690fae70ac5d417519885d84db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when failed to receive ad.  <a href="#afa627690fae70ac5d417519885d84db6">More...</a><br /></td></tr>
+<tr class="separator:afa627690fae70ac5d417519885d84db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2236f4f7c423f78e59aa44eb25fb960"><td class="memItemLeft" align="right" valign="top">EventHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#ae2236f4f7c423f78e59aa44eb25fb960">AdReceived</a></td></tr>
+<tr class="memdesc:ae2236f4f7c423f78e59aa44eb25fb960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when ad received.  <a href="#ae2236f4f7c423f78e59aa44eb25fb960">More...</a><br /></td></tr>
+<tr class="separator:ae2236f4f7c423f78e59aa44eb25fb960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f3a78201cdf8c8feadd301e41bebb3"><td class="memItemLeft" align="right" valign="top">EventHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#a91f3a78201cdf8c8feadd301e41bebb3">AdClicked</a></td></tr>
+<tr class="memdesc:a91f3a78201cdf8c8feadd301e41bebb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when ad clicked.  <a href="#a91f3a78201cdf8c8feadd301e41bebb3">More...</a><br /></td></tr>
+<tr class="separator:a91f3a78201cdf8c8feadd301e41bebb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Icon ad. </p>
@@ -268,8 +285,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destroy ad. </p>
-<p>Release the resources of native, but the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script does not destroy.</p>
-<p>If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script has been destroyed, it will automatically call this method internally.</p>
+<dl class="section note"><dt>Note</dt><dd>Release the resources of native, but the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script does not destroy. <br />
+If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script has been destroyed, it will automatically call this method internally. </dd></dl>
 
 <p>Implements <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html#a9e60be02c7586ba99f0fed84965a18c4">NendUnityPlugin.AD.NendAd</a>.</p>
 
@@ -329,6 +346,66 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the callback. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use EventHandler instead. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Event Documentation</h2>
+<a class="anchor" id="a7af9f94177b47ba5b55bf5f856641b9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler NendUnityPlugin.AD.NendAdIcon.AdLoaded</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when ad loaded. </p>
+<dl class="section warning"><dt>Warning</dt><dd>It is not occurred when the platform is Android. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afa627690fae70ac5d417519885d84db6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;<a class="el" href="class_nend_unity_plugin_1_1_common_1_1_nend_ad_error_event_args.html">NendAdErrorEventArgs</a>&gt; NendUnityPlugin.AD.NendAdIcon.AdFailedToReceive</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when failed to receive ad. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_nend_unity_plugin_1_1_common_1_1_nend_ad_error_event_args.html" title="Information of error. ">NendUnityPlugin.Common.NendAdErrorEventArgs</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2236f4f7c423f78e59aa44eb25fb960"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler NendUnityPlugin.AD.NendAdIcon.AdReceived</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when ad received. </p>
+
+</div>
+</div>
+<a class="anchor" id="a91f3a78201cdf8c8feadd301e41bebb3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler NendUnityPlugin.AD.NendAdIcon.AdClicked</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when ad clicked. </p>
 
 </div>
 </div>
@@ -338,7 +415,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 24 2015 11:56:31 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 25 2015 12:34:22 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

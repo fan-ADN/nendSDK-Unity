@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['success',['SUCCESS',['../namespace_nend_unity_plugin_1_1_callback.html#a439eb407799e3077fd18b7f3809f68d6ad0749aaba8b833466dfcbb0428e4f89c',1,'NendUnityPlugin::Callback']]]
+  ['success',['SUCCESS',['../namespace_nend_unity_plugin_1_1_common.html#a40ce9dbd139cba0f773d05a1a20684d7ad0749aaba8b833466dfcbb0428e4f89c',1,'NendUnityPlugin::Common']]]
 ];

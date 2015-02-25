@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
@@ -90,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">NendUnityPlugin.AD.NendAdInterstitial Class Reference</div>  </div>
@@ -130,6 +132,18 @@ Properties</h2></td></tr>
 <tr class="memitem:ac55674bb9ffdbe98e3639c12250776fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_interstitial_callback.html">NendAdInterstitialCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#ac55674bb9ffdbe98e3639c12250776fd">Callback</a><code> [set]</code></td></tr>
 <tr class="memdesc:ac55674bb9ffdbe98e3639c12250776fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the callback.  <a href="#ac55674bb9ffdbe98e3639c12250776fd">More...</a><br /></td></tr>
 <tr class="separator:ac55674bb9ffdbe98e3639c12250776fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a734142a50a208ddba5ce08722a3e7b79"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_load_event_args.html">NendAdInterstitialLoadEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#a734142a50a208ddba5ce08722a3e7b79">AdLoaded</a></td></tr>
+<tr class="memdesc:a734142a50a208ddba5ce08722a3e7b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when ad loaded.  <a href="#a734142a50a208ddba5ce08722a3e7b79">More...</a><br /></td></tr>
+<tr class="separator:a734142a50a208ddba5ce08722a3e7b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3afa59ef1caf0b570a91150a9bdd7a53"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_click_event_args.html">NendAdInterstitialClickEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#a3afa59ef1caf0b570a91150a9bdd7a53">AdClicked</a></td></tr>
+<tr class="memdesc:a3afa59ef1caf0b570a91150a9bdd7a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when ad clicked.  <a href="#a3afa59ef1caf0b570a91150a9bdd7a53">More...</a><br /></td></tr>
+<tr class="separator:a3afa59ef1caf0b570a91150a9bdd7a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9c11ec7d595c05d232349d4f4dea52"><td class="memItemLeft" align="right" valign="top">EventHandler&lt; <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_show_event_args.html">NendAdInterstitialShowEventArgs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#acf9c11ec7d595c05d232349d4f4dea52">AdShown</a></td></tr>
+<tr class="memdesc:acf9c11ec7d595c05d232349d4f4dea52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when tried to show ad.  <a href="#acf9c11ec7d595c05d232349d4f4dea52">More...</a><br /></td></tr>
+<tr class="separator:acf9c11ec7d595c05d232349d4f4dea52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interstitial ad. </p>
@@ -183,7 +197,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Show interstitial ad on the screen. </p>
-<p>Display interstitial ad of spot that was loaded last.</p>
+<dl class="section note"><dt>Note</dt><dd>Show interstitial ad of spot that was loaded last. </dd></dl>
 
 </div>
 </div>
@@ -225,8 +239,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Show interstitial ad on the screen upon end. </p>
-<p>Display interstitial ad of spot that was loaded last.</p>
-<p><b>Implemented only Android</b></p>
+<dl class="section note"><dt>Note</dt><dd>Show interstitial ad of spot that was loaded last. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Implemented only Android. </dd></dl>
 
 </div>
 </div>
@@ -251,7 +265,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p><b>Implemented only Android</b></p>
+<dl class="section warning"><dt>Warning</dt><dd>Implemented only Android. </dd></dl>
 
 </div>
 </div>
@@ -292,8 +306,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the instance. </p>
-<p>When GameObject that added a <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html" title="Interstitial ad. ">NendAdInterstitial</a> is not loaded, it returns null.</p>
 <dl class="section return"><dt>Returns</dt><dd>This instance.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>When GameObject that added a <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html" title="Interstitial ad. ">NendAdInterstitial</a> is not loaded, it returns null. </dd></dl>
 
 </div>
 </div>
@@ -316,6 +330,53 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the callback. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>Use EventHandler instead. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Event Documentation</h2>
+<a class="anchor" id="a734142a50a208ddba5ce08722a3e7b79"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;<a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_load_event_args.html">NendAdInterstitialLoadEventArgs</a>&gt; NendUnityPlugin.AD.NendAdInterstitial.AdLoaded</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when ad loaded. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_load_event_args.html" title="Information of load event. ">NendUnityPlugin.AD.NendAdInterstitialLoadEventArgs</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3afa59ef1caf0b570a91150a9bdd7a53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;<a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_click_event_args.html">NendAdInterstitialClickEventArgs</a>&gt; NendUnityPlugin.AD.NendAdInterstitial.AdClicked</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when ad clicked. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_click_event_args.html" title="Information of click event. ">NendUnityPlugin.AD.NendAdInterstitialClickEventArgs</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acf9c11ec7d595c05d232349d4f4dea52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventHandler&lt;<a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_show_event_args.html">NendAdInterstitialShowEventArgs</a>&gt; NendUnityPlugin.AD.NendAdInterstitial.AdShown</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Occurs when tried to show ad. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_show_event_args.html" title="Information of show event. ">NendUnityPlugin.AD.NendAdInterstitialShowEventArgs</a> </dd></dl>
 
 </div>
 </div>
@@ -325,7 +386,7 @@ Properties</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 24 2015 11:56:31 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 25 2015 12:34:22 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

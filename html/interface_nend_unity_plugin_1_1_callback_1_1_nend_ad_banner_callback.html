@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
@@ -109,7 +110,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5322feea8a922ddfa3222da60fc7b096"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_banner_callback.html#a5322feea8a922ddfa3222da60fc7b096">OnReceiveBannerAd</a> ()</td></tr>
 <tr class="memdesc:a5322feea8a922ddfa3222da60fc7b096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked when download of ad image finished.  <a href="#a5322feea8a922ddfa3222da60fc7b096">More...</a><br /></td></tr>
 <tr class="separator:a5322feea8a922ddfa3222da60fc7b096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a4cbc8e58169faf300427a99865ec59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_banner_callback.html#a2a4cbc8e58169faf300427a99865ec59">OnFailToReceiveBannerAd</a> (<a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cd">NendErrorCode</a> errorCode, string message)</td></tr>
+<tr class="memitem:a2a4cbc8e58169faf300427a99865ec59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_banner_callback.html#a2a4cbc8e58169faf300427a99865ec59">OnFailToReceiveBannerAd</a> (<a class="el" href="namespace_nend_unity_plugin_1_1_common.html#a9bcb251827acb8ae5f3a35fc9de7195e">NendErrorCode</a> errorCode, string message)</td></tr>
 <tr class="memdesc:a2a4cbc8e58169faf300427a99865ec59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked when ad request failed.  <a href="#a2a4cbc8e58169faf300427a99865ec59">More...</a><br /></td></tr>
 <tr class="separator:a2a4cbc8e58169faf300427a99865ec59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a469b2edd8d1a51292d93cf96a0c6bb1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_nend_unity_plugin_1_1_callback_1_1_nend_ad_banner_callback.html#a469b2edd8d1a51292d93cf96a0c6bb1e">OnDismissScreen</a> ()</td></tr>
@@ -118,6 +119,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Event callbacks for banner ad. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>Use EventHandler instead. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a771f73ba86097ac97269f23deadb23d7"></a>
 <div class="memitem">
@@ -133,7 +135,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invoked when ad request finished. </p>
-<p><b>It is not invoked when the platform is Android.</b></p>
+<dl class="section warning"><dt>Warning</dt><dd>It is not invoked when the platform is Android. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Use <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a63fa0d4324d461060922a8e92838021b" title="Occurs when ad loaded. ">NendUnityPlugin.AD.NendAdBanner.AdLoaded</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -151,6 +154,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invoked when ad clicked. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>Use <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a9bbe956dc0d3d00b581bd28c710f254c" title="Occurs when ad clicked. ">NendUnityPlugin.AD.NendAdBanner.AdClicked</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -168,6 +172,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invoked when download of ad image finished. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>Use <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a13ec705eab724df12ab872c3cadcefb1" title="Occurs when ad received. ">NendUnityPlugin.AD.NendAdBanner.AdReceived</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -178,7 +183,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void NendUnityPlugin.Callback.NendAdBannerCallback.OnFailToReceiveBannerAd </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_nend_unity_plugin_1_1_callback.html#a411d67bb43edb2066e79d8b07d1d24cd">NendErrorCode</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_nend_unity_plugin_1_1_common.html#a9bcb251827acb8ae5f3a35fc9de7195e">NendErrorCode</a>&#160;</td>
           <td class="paramname"><em>errorCode</em>, </td>
         </tr>
         <tr>
@@ -203,7 +208,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd>NendUnityPlugin.Common.NendErrorCode</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_nend_unity_plugin_1_1_common.html#a9bcb251827acb8ae5f3a35fc9de7195e" title="The error code of ad. ">NendUnityPlugin.Common.NendErrorCode</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000008">Deprecated:</a></b></dt><dd>Use <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#aa3c004cc585686e06daaf8ab698f538c" title="Occurs when failed to receive ad. ">NendUnityPlugin.AD.NendAdBanner.AdFailedToReceive</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -221,7 +227,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Invoked when ad is back on the screen. </p>
-<p><b>It is not invoked when the platform is iOS.</b></p>
+<dl class="section warning"><dt>Warning</dt><dd>It is not invoked when the platform is iOS. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>Use <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a4900e85acbeb963891ed834c4c90393c" title="Occurs when the ad is back on the screen ">NendUnityPlugin.AD.NendAdBanner.AdBacked</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -231,7 +238,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 24 2015 11:56:31 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 25 2015 12:34:22 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
