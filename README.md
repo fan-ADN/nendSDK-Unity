@@ -1,48 +1,24 @@
-nendSDK-Unity Sample Project
-================== 
+# nendSDK-Unity Sample Project
 ![ロゴ](https://github.com/fan-ADN/nendSDK-Android/blob/master/Sample/res/drawable/nend_logo.png)
 
-Overview
----------------------------------
-nendSDK_Unityプラグインのサンプルプロジェクトです。  
+## Overview
+
+nendSDK Unityプラグインのサンプルプロジェクトです。  
 基本的な実装方法および動作の確認が行えます。
 
-Description
----------------------------------
-Androidにおけるビルド方法の違いに応じて2種類のサンプルをご用意しています。
-* NendUnitySampleA  
-Androidプロジェクトにエクスポートしてから動作させる場合
+## Description
 
-* NendUnitySampleU  
-Unityから直接apkファイルを作成し動作させる場合
+<font color="#FF0000">
+** 動作確認は実機上で行ってください。**  
+** UnityのGameウィンドウおよびシミュレータでは広告が表示されません。**
+</font>
 
-*iOSについては両サンプルの内容に差異はありません。また両サンプルの動作内容自体に差異はありません。*
+## Usage
 
-**動作確認は実機上で行ってください。UnityのGameウィンドウおよびシミュレータでは広告が表示されません。**
+* ** Android **
 
-Requirement
----------------------------------
-* NendUnitySampleA(Android)  
-Androidプロジェクトにエクスポート後、Android公式リファレンスやnendSDKのマニュアル等を参考に、Google Play servicesライブラリをプロジェクトに追加してください。  
+  UnityPlayerでapkファイルを作成し、実機にインストールしてください。  
 
-Usage
----------------------------------
-**Android**
+* ** iOS **
 
-* NendUnitySampleA  
-Androidプロジェクトにエクスポート後、Google Play servicesライブラリを追加し、  
-AndroidManifest.xml内の以下コメントアウトを外してeclipseでビルドしてください。
-
-```
-<!--
-    <meta-data 
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" /> 
--->
-```
-
-* NendUnitySampleU  
-Unityからapkファイルを作成し、実機にインストールしてください。  
-  
-**iOS**  
-* Xcodeプロジェクトにエクスポートしてビルドしてください。
+  Xcodeプロジェクトにエクスポートしてビルドしてください。
