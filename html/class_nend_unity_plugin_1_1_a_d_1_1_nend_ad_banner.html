@@ -152,7 +152,7 @@ Events</h2></td></tr>
 <tr class="memdesc:a9bbe956dc0d3d00b581bd28c710f254c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when ad clicked.  <a href="#a9bbe956dc0d3d00b581bd28c710f254c">More...</a><br /></td></tr>
 <tr class="separator:a9bbe956dc0d3d00b581bd28c710f254c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4900e85acbeb963891ed834c4c90393c"><td class="memItemLeft" align="right" valign="top">EventHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a4900e85acbeb963891ed834c4c90393c">AdBacked</a></td></tr>
-<tr class="memdesc:a4900e85acbeb963891ed834c4c90393c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the ad is back on the screen  <a href="#a4900e85acbeb963891ed834c4c90393c">More...</a><br /></td></tr>
+<tr class="memdesc:a4900e85acbeb963891ed834c4c90393c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when ad comes back to screen.  <a href="#a4900e85acbeb963891ed834c4c90393c">More...</a><br /></td></tr>
 <tr class="separator:a4900e85acbeb963891ed834c4c90393c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -288,8 +288,7 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destroy ad. </p>
-<dl class="section note"><dt>Note</dt><dd>Release the resources of native, but the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html" title="Banner ad. ">NendAdBanner</a> script does not destroy.<br />
-If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html" title="Banner ad. ">NendAdBanner</a> script has been destroyed, it will automatically call this method internally. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It releases resources of native side, but GameObject with <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script is not released. When GameObject is destroyed, this method automatically will be called. </dd></dl>
 
 <p>Implements <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html#a9e60be02c7586ba99f0fed84965a18c4">NendUnityPlugin.AD.NendAd</a>.</p>
 
@@ -349,7 +348,7 @@ If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1
 </div><div class="memdoc">
 
 <p>Sets the callback. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Use EventHandler instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Use <code>EventHandler</code> instead. </dd></dl>
 
 </div>
 </div>
@@ -422,7 +421,7 @@ If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1
       </table>
 </div><div class="memdoc">
 
-<p>Occurs when the ad is back on the screen </p>
+<p>Occurs when ad comes back to screen. </p>
 <dl class="section warning"><dt>Warning</dt><dd>It is not occurred when the platform is iOS. </dd></dl>
 
 </div>
@@ -433,7 +432,7 @@ If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 25 2015 12:34:22 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 10:59:23 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -285,8 +285,7 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Destroy ad. </p>
-<dl class="section note"><dt>Note</dt><dd>Release the resources of native, but the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script does not destroy. <br />
-If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script has been destroyed, it will automatically call this method internally. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It releases resources of native side, but GameObject with <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html" title="Icon ad. ">NendAdIcon</a> script is not released. When GameObject is destroyed, this method automatically will be called. </dd></dl>
 
 <p>Implements <a class="el" href="class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html#a9e60be02c7586ba99f0fed84965a18c4">NendUnityPlugin.AD.NendAd</a>.</p>
 
@@ -346,7 +345,7 @@ If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1
 </div><div class="memdoc">
 
 <p>Sets the callback. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use EventHandler instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Use <code>EventHandler</code> instead. </dd></dl>
 
 </div>
 </div>
@@ -415,7 +414,7 @@ If the GameObject that added the <a class="el" href="class_nend_unity_plugin_1_1
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 25 2015 12:34:22 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Feb 26 2015 10:59:23 for NendUnityPlugin by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
