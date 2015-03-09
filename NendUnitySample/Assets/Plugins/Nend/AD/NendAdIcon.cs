@@ -48,7 +48,7 @@ namespace NendUnityPlugin.AD
 		/// <summary>
 		/// Sets the callback.
 		/// </summary>
-		/// \deprecated Use EventHandler instead.
+		/// \deprecated Use <c>EventHandler</c> instead.
 		[Obsolete ("Use EventHandler instead")]
 		public NendAdIconCallback Callback {
 			set {
@@ -131,8 +131,8 @@ namespace NendUnityPlugin.AD
 		/// Destroy ad.
 		/// </summary>
 		/// \note
-		/// Release the resources of native, but the GameObject that added the NendAdIcon script does not destroy. \n
-		/// If the GameObject that added the NendAdIcon script has been destroyed, it will automatically call this method internally.
+		/// It releases resources of native side, but GameObject with NendAdIcon script is not released.
+		/// When GameObject is destroyed, this method automatically will be called.
 		public override void Destroy ()
 		{
 			Interface.DestroyIcons (gameObject.name);

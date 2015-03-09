@@ -31,7 +31,7 @@ namespace NendUnityPlugin.AD
 		/// <summary>
 		/// Sets the callback.
 		/// </summary>
-		/// \deprecated Use EventHandler instead.
+		/// \deprecated Use <c>EventHandler</c> instead.
 		[Obsolete ("Use EventHandler instead")]
 		public NendAdInterstitialCallback Callback {
 			set {
@@ -63,7 +63,7 @@ namespace NendUnityPlugin.AD
 		public event EventHandler<NendAdInterstitialClickEventArgs> AdClicked;
 
 		/// <summary>
-		/// Occurs when tried to show ad.
+		/// Occurs when ad is being displayed.
 		/// </summary>
 		/// \sa NendUnityPlugin.AD.NendAdInterstitialShowEventArgs
 		public event EventHandler<NendAdInterstitialShowEventArgs> AdShown;
@@ -90,16 +90,16 @@ namespace NendUnityPlugin.AD
 		}
 		
 		/// <summary>
-		/// Show interstitial ad on the screen.
+		/// Show interstitial ad.
 		/// </summary>
-		/// \note Show interstitial ad of spot that was loaded last.
+		/// \note Show interstitial ad to the ad space which is loaded at last.
 		public void Show ()
 		{
 			Interface.ShowInterstitialAd ("");
 		}
 		
 		/// <summary>
-		/// Show interstitial ad of the specific spot on the screen.
+		/// Show interstitial ad on specific ad space.
 		/// </summary>
 		/// <param name="spotId">Spot id.</param>
 		public void Show (string spotId)
@@ -108,9 +108,9 @@ namespace NendUnityPlugin.AD
 		}
 		
 		/// <summary>
-		/// Show interstitial ad on the screen upon end.
+		/// Show interstitial ad when it ends.
 		/// </summary>
-		/// \note Show interstitial ad of spot that was loaded last.
+		/// \note Show interstitial ad to the ad space which is loaded at last.
 		/// \warning Implemented only Android.
 		public void Finish ()
 		{
@@ -118,7 +118,7 @@ namespace NendUnityPlugin.AD
 		}
 		
 		/// <summary>
-		/// Show interstitial ad of the specific spot on the screen upon end.
+		/// Show interstitial ad on specific ad space when it ends.
 		/// </summary>
 		/// <param name="spotId">Spot id.</param>
 		/// \warning Implemented only Android.

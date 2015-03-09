@@ -43,6 +43,7 @@ namespace NendUnityPlugin.Layout
 		/// <param name="unit">Unit of numeric value.</param>
 		/// \remarks Default is DIP.
 		/// \sa NendUnityPlugin.Layout.ComplexUnit
+		/// \note Not valid for iOS.
 		public NendAdDefaultLayoutBuilder Unit (ComplexUnit unit)
 		{
 			this.unit = unit;

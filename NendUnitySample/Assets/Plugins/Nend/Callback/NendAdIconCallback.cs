@@ -6,7 +6,7 @@ namespace NendUnityPlugin.Callback
 	/// <summary>
 	/// Event callbacks for icon ad.
 	/// </summary>
-	/// \deprecated Use EventHandler instead.
+	/// \deprecated Use <c>EventHandler</c> instead.
 	[Obsolete ("This interface is obsolete; use EventHandler instead")]
 	public interface NendAdIconCallback
 	{

@@ -5,9 +5,6 @@
 
 #import "NendPlugin.h"
 
-#include "iPhone_target_Prefix.pch"
-#include "iPhone_OrientationSupport.h"
-
 #import <objc/runtime.h>
 
 static const char* INTERSTITIAL_GAME_OBJECT = "NendAdInterstitial";
@@ -15,8 +12,8 @@ static const char* INTERSTITIAL_GAME_OBJECT = "NendAdInterstitial";
 extern UIView* UnityGetGLView();
 extern UIViewController* UnityGetGLViewController();
 
-static NSMutableDictionary* _bannerAdDict = [[NSMutableDictionary alloc] init];
-static NSMutableDictionary* _iconAdDict = [[NSMutableDictionary alloc] init];
+static NSMutableDictionary* _bannerAdDict = [NSMutableDictionary new];
+static NSMutableDictionary* _iconAdDict = [NSMutableDictionary new];
 
 enum NendGravity {
     LEFT = 1,
@@ -41,7 +38,7 @@ enum NendBannerSize {
     SIZE_728X90 = 4,
 };
 
-NSString* CreateNSString(const char* string)
+static NSString* CreateNSString(const char* string)
 {
     if (string)
         return @(string);
@@ -49,16 +46,23 @@ NSString* CreateNSString(const char* string)
         return @"";
 }
 
-char* MakeStringCopy(const char* string)
+static char* MakeStringCopy(const char* string)
 {
-    if (NULL == string) return NULL;
+    if (NULL == string)
+        return NULL;
 
     char* res = (char*)malloc(strlen(string) + 1);
     strcpy(res, string);
     return res;
 }
 
-CGSize BannerSize(NendBannerSize size)
+static BOOL NewerThanSpecificVersion(NSString* versionCode)
+{
+    NSString* version = [[UIDevice currentDevice] systemVersion];
+    return [version compare:versionCode options:NSNumericSearch] != NSOrderedAscending;
+}
+
+static CGSize BannerSize(NendBannerSize size)
 {
     switch (size) {
         case SIZE_320X50:
@@ -76,18 +80,24 @@ CGSize BannerSize(NendBannerSize size)
     }
 }
 
-CGPoint CalculatePoint(int gravity, CGSize viewSize, int left, int top, int right, int bottom)
+static CGPoint CalculatePoint(int gravity, CGSize viewSize, int left, int top, int right, int bottom)
 {
     CGPoint point = CGPointZero;
     CGSize screenSize = UnityGetGLView().bounds.size;
 
-    if (0 != (gravity & CENTER_HORIZONTAL)) point.x = (screenSize.width - viewSize.width) / 2;
-    if (0 != (gravity & RIGHT)) point.x = screenSize.width - viewSize.width;
-    if (0 != (gravity & LEFT)) point.x = 0.0f;
+    if (0 != (gravity & CENTER_HORIZONTAL))
+        point.x = (screenSize.width - viewSize.width) / 2;
+    if (0 != (gravity & RIGHT))
+        point.x = screenSize.width - viewSize.width;
+    if (0 != (gravity & LEFT))
+        point.x = 0.0f;
 
-    if (0 != (gravity & CENTER_VERTICAL)) point.y = (screenSize.height - viewSize.height) / 2;
-    if (0 != (gravity & BOTTOM)) point.y = screenSize.height - viewSize.height;
-    if (0 != (gravity & TOP)) point.y = 0.0f;
+    if (0 != (gravity & CENTER_VERTICAL))
+        point.y = (screenSize.height - viewSize.height) / 2;
+    if (0 != (gravity & BOTTOM))
+        point.y = screenSize.height - viewSize.height;
+    if (0 != (gravity & TOP))
+        point.y = 0.0f;
 
     point.x += left;
     point.y += top;
@@ -97,9 +107,10 @@ CGPoint CalculatePoint(int gravity, CGSize viewSize, int left, int top, int righ
     return point;
 }
 
-UIColor* UIColorForColorCode(NSString* colorCode)
+static UIColor* UIColorForColorCode(NSString* colorCode)
 {
-    if (!colorCode || 0 == colorCode.length) return [UIColor blackColor];
+    if (!colorCode || 0 == colorCode.length)
+        return [UIColor blackColor];
 
     if ([[colorCode substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"#"])
         colorCode = [colorCode substringWithRange:NSMakeRange(1, colorCode.length - 1)];
@@ -130,7 +141,7 @@ UIColor* UIColorForColorCode(NSString* colorCode)
     return [UIColor colorWithRed:red / 255.0 green:green / 255.0 blue:blue / 255.0 alpha:1.0];
 }
 
-CGFloat IconActualHeight(CGFloat size, BOOL titleVisible, BOOL spaceEnabled)
+static CGFloat IconActualHeight(CGFloat size, BOOL titleVisible, BOOL spaceEnabled)
 {
     if (titleVisible && !spaceEnabled)
         return size + size * 15 / NAD_ICON_SIZE_57x57.height;
@@ -138,7 +149,48 @@ CGFloat IconActualHeight(CGFloat size, BOOL titleVisible, BOOL spaceEnabled)
         return size;
 }
 
-NSInteger InterstitialStatusCodeToInteger(NADInterstitialStatusCode status)
+static BOOL ShouldAutorotateIMP(id self, SEL _cmd)
+{
+    if ([UnityGetGLViewController() respondsToSelector:@selector(shouldAutorotate)])
+        return [UnityGetGLViewController() shouldAutorotate];
+    else
+        return YES;
+}
+
+static NSUInteger SupportedInterfaceOrientationsIMP(id self, SEL _cmd)
+{
+    if ([UnityGetGLViewController() respondsToSelector:@selector(supportedInterfaceOrientations)])
+        return [UnityGetGLViewController() supportedInterfaceOrientations];
+    else
+        return UIInterfaceOrientationMaskAll;
+}
+
+static BOOL ShouldAutorotateToInterfaceOrientationIMP(id self, SEL _cmd, UIInterfaceOrientation interfaceOrientation)
+{
+    if ([UnityGetGLViewController() respondsToSelector:@selector(shouldAutorotateToInterfaceOrientation:)])
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        return [UnityGetGLViewController() shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+#pragma clang diagnostic pop
+    else
+        return YES;
+}
+
+static void AddRotateMethodToInterstitialViewController()
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class cls = NSClassFromString(@"NADInterstitialViewController");
+        if (NewerThanSpecificVersion(@"6.0")) {
+            class_replaceMethod(cls, @selector(shouldAutorotate), (IMP)&ShouldAutorotateIMP, "c8@0:4");
+            class_replaceMethod(cls, @selector(supportedInterfaceOrientations), (IMP)&SupportedInterfaceOrientationsIMP, "I8@0:4");
+        } else {
+            class_replaceMethod(cls, @selector(shouldAutorotateToInterfaceOrientation:), (IMP)&ShouldAutorotateToInterfaceOrientationIMP, "c12@0:4i8");
+        }
+    });
+}
+
+static NSInteger InterstitialStatusCodeToInteger(NADInterstitialStatusCode status)
 {
     switch (status) {
         case SUCCESS:
@@ -154,7 +206,7 @@ NSInteger InterstitialStatusCodeToInteger(NADInterstitialStatusCode status)
     }
 }
 
-NSInteger InterstitialClickTypeToInteger(NADInterstitialClickType type)
+static NSInteger InterstitialClickTypeToInteger(NADInterstitialClickType type)
 {
     switch (type) {
         case DOWNLOAD:
@@ -166,43 +218,6 @@ NSInteger InterstitialClickTypeToInteger(NADInterstitialClickType type)
     }
 }
 
-BOOL ShouldAutorotateIMP(id self, SEL _cmd)
-{
-    if ([UnityGetGLViewController() respondsToSelector:@selector(shouldAutorotate)])
-        return [UnityGetGLViewController() shouldAutorotate];
-    else
-        return YES;
-}
-
-NSUInteger SupportedInterfaceOrientationsIMP(id self, SEL _cmd)
-{
-    if ([UnityGetGLViewController() respondsToSelector:@selector(supportedInterfaceOrientations)])
-        return [UnityGetGLViewController() supportedInterfaceOrientations];
-    else
-        return UIInterfaceOrientationMaskAll;
-}
-
-BOOL ShouldAutorotateToInterfaceOrientationIMP(id self, SEL _cmd, UIInterfaceOrientation interfaceOrientation)
-{
-    if ([UnityGetGLViewController() respondsToSelector:@selector(shouldAutorotateToInterfaceOrientation:)])
-        return [UnityGetGLViewController() shouldAutorotateToInterfaceOrientation:interfaceOrientation];
-    else
-        return YES;
-}
-
-void AddRotateMethodToInterstitialViewController()
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-      Class cls = NSClassFromString(@"NADInterstitialViewController");
-      if (_ios60orNewer) {
-          class_replaceMethod(cls, @selector(shouldAutorotate), (IMP)&ShouldAutorotateIMP, "c8@0:4");
-          class_replaceMethod(cls, @selector(supportedInterfaceOrientations), (IMP)&SupportedInterfaceOrientationsIMP, "I8@0:4");
-      } else
-          class_replaceMethod(cls, @selector(shouldAutorotateToInterfaceOrientation:), (IMP)&ShouldAutorotateToInterfaceOrientationIMP, "c12@0:4i8");
-    });
-}
-
 ///-----------------------------------------------
 /// @name Implementations
 ///-----------------------------------------------
@@ -212,7 +227,8 @@ void AddRotateMethodToInterstitialViewController()
 - (instancetype)initWithGameObject:(NSString*)gameObject
 {
     self = [super init];
-    if (self) _gameObject = [gameObject copy];
+    if (self)
+        _gameObject = [gameObject copy];
     return self;
 }
 
@@ -252,7 +268,8 @@ void AddRotateMethodToInterstitialViewController()
 - (instancetype)initWithGameObject:(NSString*)gameObject
 {
     self = [super init];
-    if (self) _gameObject = [gameObject copy];
+    if (self)
+        _gameObject = [gameObject copy];
     return self;
 }
 
@@ -294,7 +311,7 @@ void AddRotateMethodToInterstitialViewController()
     static NADInterstitialEventDispatcher* instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-      instance = [[NADInterstitialEventDispatcher alloc] init];
+        instance = [[NADInterstitialEventDispatcher alloc] init];
     });
     return instance;
 }
@@ -439,7 +456,8 @@ void AddRotateMethodToInterstitialViewController()
 {
     NSArray* paramArray = [paramString componentsSeparatedByString:@","];
     int index = 0;
-    if (self.tag != [paramArray[index++] integerValue]) return NO;
+    if (self.tag != [paramArray[index++] integerValue])
+        return NO;
 
     self.gravity = [paramArray[index++] integerValue];
     self.leftMargin = [paramArray[index++] integerValue];
@@ -447,7 +465,8 @@ void AddRotateMethodToInterstitialViewController()
     self.rightMargin = [paramArray[index++] integerValue];
     self.bottomMargin = [paramArray[index++] integerValue];
     NSInteger size = [paramArray[index++] integerValue];
-    if (0 < size) self.size = size;
+    if (0 < size)
+        self.size = size;
     self.spaceEnabled = [@"true" isEqualToString:(NSString*)paramArray[index++]];
     self.titleVisible = [@"true" isEqualToString:(NSString*)paramArray[index++]];
     self.titleColor = (NSString*)paramArray[index++];
@@ -489,7 +508,7 @@ void AddRotateMethodToInterstitialViewController()
         _rightMargin = [paramArray[index++] integerValue];
         _bottomMargin = [paramArray[index++] integerValue];
         _iconCount = [paramArray[index++] integerValue];
-        _iconArray = [[NSMutableArray alloc] init];
+        _iconArray = [NSMutableArray new];
         for (int i = 0; i < _iconCount; i++)
             [_iconArray addObject:[IconParams paramWithString:paramArray[index + i]]];
     }
@@ -506,7 +525,7 @@ void AddRotateMethodToInterstitialViewController()
     self.rightMargin = [paramArray[index++] integerValue];
     self.bottomMargin = [paramArray[index++] integerValue];
     self.orientation = [paramArray[index++] integerValue];
-    
+
     int count = [paramArray[index++] integerValue];
     for (int i = 0; i < count; i++) {
         NSString* iconParamString = (NSString*)paramArray[index + i];
@@ -543,15 +562,13 @@ void AddRotateMethodToInterstitialViewController()
     self = [super init];
     if (self) {
         _params = [params retain];
+        _rotationHandler = [NendRotationHandler new];
 
-        _bannerView = [[NADView alloc] init];
+        _bannerView = [NADView new];
         _bannerView.hidden = YES;
         _bannerView.delegate = [[NADViewEventDispatcher alloc] initWithGameObject:params.gameObject];
         _bannerView.isOutputLog = params.outputLog;
-
         [_bannerView setNendID:params.apiKey spotID:params.spotID];
-
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willRotate:) name:kUnityViewWillRotate object:nil];
     }
 
     return self;
@@ -559,10 +576,9 @@ void AddRotateMethodToInterstitialViewController()
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_rotationHandler release];
 
     [_bannerView removeFromSuperview];
-
     [_bannerView.delegate release];
     _bannerView.delegate = nil;
 
@@ -577,12 +593,17 @@ void AddRotateMethodToInterstitialViewController()
 
 - (void)load
 {
-    if (self.bannerView) [self.bannerView load];
+    if (self.bannerView)
+        [self.bannerView load];
 }
 
 - (void)show
 {
     if (self.bannerView && self.bannerView.hidden) {
+        __block NendAdBanner* weakSelf = self;
+        [self.rotationHandler startHandlingUsingBlock:^{
+            [weakSelf didRotate];
+        }];
         [self layout];
         self.bannerView.hidden = NO;
     }
@@ -590,26 +611,31 @@ void AddRotateMethodToInterstitialViewController()
 
 - (void)hide
 {
-    if (self.bannerView && !self.bannerView.hidden) self.bannerView.hidden = YES;
+    if (self.bannerView && !self.bannerView.hidden) {
+        [self.rotationHandler stopHandling];
+        self.bannerView.hidden = YES;
+    }
 }
 
 - (void)resume
 {
-    if (self.bannerView) [self.bannerView resume];
+    if (self.bannerView)
+        [self.bannerView resume];
 }
 
 - (void)pause
 {
-    if (self.bannerView) [self.bannerView pause];
+    if (self.bannerView)
+        [self.bannerView pause];
 }
 
 - (void)layout
 {
-    if (!self.bannerView) return;
+    if (!self.bannerView)
+        return;
 
     CGSize bannerSize = BannerSize((NendBannerSize)self.params.size);
-    CGPoint point = CalculatePoint(self.params.gravity, bannerSize, self.params.leftMargin,
-                                   self.params.topMargin, self.params.rightMargin, self.params.bottomMargin);
+    CGPoint point = CalculatePoint(self.params.gravity, bannerSize, self.params.leftMargin, self.params.topMargin, self.params.rightMargin, self.params.bottomMargin);
 
     self.bannerView.frame = CGRectMake(point.x, point.y, bannerSize.width, bannerSize.height);
 }
@@ -620,18 +646,11 @@ void AddRotateMethodToInterstitialViewController()
     [self layout];
 }
 
-- (void)willRotate:(NSNotification*)notification
+- (void)didRotate
 {
-    if (!self.bannerView || self.bannerView.hidden) return;
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:kUnityViewDidRotate object:nil];
-    [self hide];
-}
-
-- (void)didRotate:(NSNotification*)notification
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kUnityViewDidRotate object:nil];
-    [self show];
+    if (self.bannerView && !self.bannerView.hidden) {
+        [self layout];
+    }
 }
 
 @end
@@ -650,10 +669,11 @@ void AddRotateMethodToInterstitialViewController()
     self = [super init];
     if (self) {
         _params = [params retain];
+        _rotationHandler = [NendRotationHandler new];
 
-        _iconViewArray = [[NSMutableArray alloc] init];
+        _iconViewArray = [NSMutableArray new];
 
-        _iconLoader = [[NADIconLoader alloc] init];
+        _iconLoader = [NADIconLoader new];
         _iconLoader.isOutputLog = params.outputLog;
         _iconLoader.delegate = [[NADIconLoaderEventDispatcher alloc] initWithGameObject:params.gameObject];
 
@@ -672,8 +692,6 @@ void AddRotateMethodToInterstitialViewController()
         }
 
         [_iconLoader setNendID:params.apiKey spotID:params.spotID];
-
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willRotate:) name:kUnityViewWillRotate object:nil];
     }
 
     return self;
@@ -681,7 +699,7 @@ void AddRotateMethodToInterstitialViewController()
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_rotationHandler release];
 
     for (NADIconView* iconView in _iconViewArray) {
         [iconView removeFromSuperview];
@@ -705,12 +723,17 @@ void AddRotateMethodToInterstitialViewController()
 
 - (void)load
 {
-    if (self.iconLoader) [self.iconLoader load];
+    if (self.iconLoader)
+        [self.iconLoader load];
 }
 
 - (void)show
 {
     if (self.iconViewArray && ![self isShowing]) {
+        __block NendAdIcon* weakSelf = self;
+        [self.rotationHandler startHandlingUsingBlock:^{
+            [weakSelf didRotate];
+        }];
         [self layout];
         for (NADIconView* iconView in self.iconViewArray)
             iconView.hidden = NO;
@@ -720,6 +743,7 @@ void AddRotateMethodToInterstitialViewController()
 - (void)hide
 {
     if (self.iconViewArray && [self isShowing]) {
+        [self.rotationHandler stopHandling];
         for (NADIconView* iconView in self.iconViewArray)
             iconView.hidden = YES;
     }
@@ -727,12 +751,14 @@ void AddRotateMethodToInterstitialViewController()
 
 - (void)resume
 {
-    if (self.iconLoader) [self.iconLoader resume];
+    if (self.iconLoader)
+        [self.iconLoader resume];
 }
 
 - (void)pause
 {
-    if (self.iconLoader) [self.iconLoader pause];
+    if (self.iconLoader)
+        [self.iconLoader pause];
 }
 
 - (void)layout
@@ -746,26 +772,25 @@ void AddRotateMethodToInterstitialViewController()
             for (IconParams* icon in self.params.iconArray) {
                 height += (IconActualHeight(icon.size, icon.titleVisible, icon.spaceEnabled) + icon.topMargin + icon.bottomMargin);
                 iconWidth = icon.size + icon.leftMargin + icon.rightMargin;
-                if (width < iconWidth) width = iconWidth;
+                if (width < iconWidth)
+                    width = iconWidth;
             }
         } else {
             CGFloat iconHeight = 0.0f;
             for (IconParams* icon in self.params.iconArray) {
                 width += (icon.size + icon.leftMargin + icon.rightMargin);
                 iconHeight = IconActualHeight(icon.size, icon.titleVisible, icon.spaceEnabled) + icon.topMargin + icon.bottomMargin;
-                if (height < iconHeight) height = iconHeight;
+                if (height < iconHeight)
+                    height = iconHeight;
             }
         }
 
-        CGPoint point = CalculatePoint(self.params.gravity, CGSizeMake(width, height),
-                                       self.params.leftMargin,
-                                       self.params.topMargin,
-                                       self.params.rightMargin,
-                                       self.params.bottomMargin);
+        CGPoint point = CalculatePoint(self.params.gravity, CGSizeMake(width, height), self.params.leftMargin, self.params.topMargin, self.params.rightMargin, self.params.bottomMargin);
 
         for (IconParams* icon in self.params.iconArray) {
             NADIconView* iconView = [self iconViewForTag:icon.tag];
-            if (!iconView) continue;
+            if (!iconView)
+                continue;
 
             CGRect frame;
             if (VERTICAL == self.params.orientation) {
@@ -784,7 +809,8 @@ void AddRotateMethodToInterstitialViewController()
     } else {
         for (IconParams* icon in self.params.iconArray) {
             NADIconView* iconView = [self iconViewForTag:icon.tag];
-            if (!iconView) continue;
+            if (!iconView)
+                continue;
 
             CGPoint point = CalculatePoint(icon.gravity, CGSizeMake(icon.size, IconActualHeight(icon.size, icon.titleVisible, icon.spaceEnabled)),
                                            icon.leftMargin, icon.topMargin, icon.rightMargin, icon.bottomMargin);
@@ -804,33 +830,29 @@ void AddRotateMethodToInterstitialViewController()
 {
     for (IconParams* icon in self.params.iconArray) {
         NADIconView* iconView = [self iconViewForTag:icon.tag];
-        if (!iconView) continue;
+        if (!iconView)
+            continue;
         iconView.iconSpaceEnabled = icon.spaceEnabled;
         iconView.textHidden = !icon.titleVisible;
         iconView.textColor = UIColorForColorCode(icon.titleColor);
     }
 }
 
-- (void)willRotate:(NSNotification*)notification
+- (void)didRotate
 {
-    if (!self.iconViewArray || ![self isShowing]) return;
-
-    [self hide];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:kUnityViewDidRotate object:nil];
-}
-
-- (void)didRotate:(NSNotification*)notification
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:kUnityViewDidRotate object:nil];
-    [self show];
+    if (self.iconViewArray && [self isShowing]) {
+        [self layout];
+    }
 }
 
 - (BOOL)isShowing
 {
-    if (!self.iconViewArray) return NO;
+    if (!self.iconViewArray)
+        return NO;
 
     for (NADIconView* iconView in self.iconViewArray) {
-        if (iconView.hidden) return NO;
+        if (iconView.hidden)
+            return NO;
     }
     return YES;
 }
@@ -849,6 +871,54 @@ void AddRotateMethodToInterstitialViewController()
 
 //==============================================================================
 
+@implementation NendRotationHandler
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didRotate:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil];
+
+    }
+    return self;
+}
+
+- (void)startHandlingUsingBlock:(dispatch_block_t)block
+{
+    self.block = block;
+}
+
+- (void) stopHandling
+{
+    self.block = NULL;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+    if (_block) {
+        Block_release(_block);
+        _block = NULL;
+    }
+    [super dealloc];
+}
+
+- (void)didRotate:(NSNotification *)note
+{
+    if (self.block) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.block();
+        });
+    }
+}
+
+@end
+
+//==============================================================================
+
 void _TryCreateBanner(const char* paramString)
 {
     BOOL didLoaded = NO;
@@ -861,33 +931,39 @@ void _TryCreateBanner(const char* paramString)
     } else
         didLoaded = YES;
 
-    if (!ad.bannerView.superview) [UnityGetGLView() addSubview:ad.bannerView];
+    if (!ad.bannerView.superview)
+        [UnityGetGLView() addSubview:ad.bannerView];
 
-    if (!didLoaded) [ad.bannerView load];
+    if (!didLoaded)
+        [ad.bannerView load];
 }
 
 void _ShowBanner(const char* gameObject)
 {
     NendAdBanner* ad = _bannerAdDict[CreateNSString(gameObject)];
-    if (ad) [ad show];
+    if (ad)
+        [ad show];
 }
 
 void _HideBanner(const char* gameObject)
 {
     NendAdBanner* ad = _bannerAdDict[CreateNSString(gameObject)];
-    if (ad) [ad hide];
+    if (ad)
+        [ad hide];
 }
 
 void _ResumeBanner(const char* gameObject)
 {
     NendAdBanner* ad = _bannerAdDict[CreateNSString(gameObject)];
-    if (ad) [ad resume];
+    if (ad)
+        [ad resume];
 }
 
 void _PauseBanner(const char* gameObject)
 {
     NendAdBanner* ad = _bannerAdDict[CreateNSString(gameObject)];
-    if (ad) [ad pause];
+    if (ad)
+        [ad pause];
 }
 
 void _DestroyBanner(const char* gameObject)
@@ -898,7 +974,8 @@ void _DestroyBanner(const char* gameObject)
 void _LayoutBanner(const char* gameObject, const char* paramString)
 {
     NendAdBanner* ad = _bannerAdDict[CreateNSString(gameObject)];
-    if (ad) [ad updateLayoutWithString:CreateNSString(paramString)];
+    if (ad)
+        [ad updateLayoutWithString:CreateNSString(paramString)];
 }
 
 void _TryCreateIcons(const char* paramString)
@@ -914,34 +991,40 @@ void _TryCreateIcons(const char* paramString)
         didLoaded = YES;
 
     for (NADIconView* iconView in ad.iconViewArray) {
-        if (!iconView.superview) [UnityGetGLView() addSubview:iconView];
+        if (!iconView.superview)
+            [UnityGetGLView() addSubview:iconView];
     }
 
-    if (!didLoaded) [ad load];
+    if (!didLoaded)
+        [ad load];
 }
 
 void _ShowIcons(const char* gameObject)
 {
     NendAdIcon* ad = _iconAdDict[CreateNSString(gameObject)];
-    if (ad) [ad show];
+    if (ad)
+        [ad show];
 }
 
 void _HideIcons(const char* gameObject)
 {
     NendAdIcon* ad = _iconAdDict[CreateNSString(gameObject)];
-    if (ad) [ad hide];
+    if (ad)
+        [ad hide];
 }
 
 void _ResumeIcons(const char* gameObject)
 {
     NendAdIcon* ad = _iconAdDict[CreateNSString(gameObject)];
-    if (ad) [ad resume];
+    if (ad)
+        [ad resume];
 }
 
 void _PauseIcons(const char* gameObject)
 {
     NendAdIcon* ad = _iconAdDict[CreateNSString(gameObject)];
-    if (ad) [ad pause];
+    if (ad)
+        [ad pause];
 }
 
 void _DestroyIcons(const char* gameObject)
@@ -952,7 +1035,8 @@ void _DestroyIcons(const char* gameObject)
 void _LayoutIcons(const char* gameObject, const char* paramString)
 {
     NendAdIcon* ad = _iconAdDict[CreateNSString(gameObject)];
-    if (ad) [ad updateLayoutWithString:CreateNSString(paramString)];
+    if (ad)
+        [ad updateLayoutWithString:CreateNSString(paramString)];
 }
 
 void _LoadInterstitialAd(const char* apiKey, const char* spotId, BOOL isOutputLog)

@@ -20,9 +20,8 @@ namespace NendUnityPlugin.Layout
 	/// </code>
 	/// </example>
 	/// <para>
-	/// Can also set the layout for individual icon ads.<br/>
-	/// In that case specify the tag of icon ad to each methods.<br/>
-	/// The tag can be set in the inspector of UnityPlayer.
+	/// The layout of each icon ad can be changed with specifying icon add tag to each methods.
+	///	The tag can be set at UnityPlayer's Inspector.	
 	/// </para>
 	/// <example>
 	/// e.g. Place icon ad on the screen four corners, leaving little margin.

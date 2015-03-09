@@ -10,6 +10,7 @@
 #import "NADIconLoader.h"
 #import "NADInterstitial.h"
 
+
 ///-----------------------------------------------
 /// @name Interfaces
 ///-----------------------------------------------
@@ -105,10 +106,22 @@
 
 //==============================================================================
 
+@interface NendRotationHandler : NSObject
+
+@property (nonatomic, copy) dispatch_block_t block;
+
+- (void)startHandlingUsingBlock:(dispatch_block_t)block;
+- (void)stopHandling;
+
+@end
+
+//==============================================================================
+
 @interface NendAdBanner : NSObject
 
 @property (nonatomic, retain) NADView* bannerView;
 @property (nonatomic, retain) BannerParams* params;
+@property (nonatomic, retain) NendRotationHandler* rotationHandler;
 
 + (instancetype)bannerAdWithParams:(BannerParams*)params;
 
@@ -117,10 +130,7 @@
 - (void)hide;
 - (void)resume;
 - (void)pause;
-- (void)layout;
 - (void)updateLayoutWithString:(NSString*)paramString;
-- (void)willRotate:(NSNotification*)notification;
-- (void)didRotate:(NSNotification*)notification;
 
 @end
 
@@ -131,6 +141,7 @@
 @property (nonatomic, retain) NADIconLoader* iconLoader;
 @property (nonatomic, retain) NSMutableArray* iconViewArray;
 @property (nonatomic, retain) IconGroupParams* params;
+@property (nonatomic, retain) NendRotationHandler* rotationHandler;
 
 + (instancetype)iconAdWithParams:(IconGroupParams*)params;
 
@@ -139,12 +150,7 @@
 - (void)hide;
 - (void)resume;
 - (void)pause;
-- (void)layout;
-- (void)updateIconViews;
 - (void)updateLayoutWithString:(NSString*)paramString;
-- (BOOL)isShowing;
-- (void)willRotate:(NSNotification*)notification;
-- (void)didRotate:(NSNotification*)notification;
 
 @end
 

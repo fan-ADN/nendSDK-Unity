@@ -35,7 +35,7 @@ namespace NendUnityPlugin.AD
 		/// <summary>
 		/// Sets the callback.
 		/// </summary>
-		/// \deprecated Use EventHandler instead.
+		/// \deprecated Use <c>EventHandler</c> instead.
 		[Obsolete ("Use EventHandler instead")]
 		public NendAdBannerCallback Callback {
 			set {
@@ -77,7 +77,7 @@ namespace NendUnityPlugin.AD
 		public event EventHandler AdClicked;
 
 		/// <summary>
-		/// Occurs when the ad is back on the screen
+		/// Occurs when ad comes back to screen.
 		/// </summary>
 		/// \warning It is not occurred when the platform is iOS.
 		public event EventHandler AdBacked;
@@ -124,8 +124,8 @@ namespace NendUnityPlugin.AD
 		/// Destroy ad.
 		/// </summary>
 		/// \note
-		/// Release the resources of native, but the GameObject that added the NendAdBanner script does not destroy.\n
-		/// If the GameObject that added the NendAdBanner script has been destroyed, it will automatically call this method internally.
+		/// It releases resources of native side, but GameObject with NendAdBanner script is not released.
+		/// When GameObject is destroyed, this method automatically will be called.
 		public override void Destroy ()
 		{
 			Interface.DestroyBanner (gameObject.name);

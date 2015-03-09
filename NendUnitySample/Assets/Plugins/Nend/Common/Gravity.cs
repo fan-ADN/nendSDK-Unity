@@ -1,7 +1,7 @@
 ﻿namespace NendUnityPlugin.Common
 {
 	/// <summary>
-	/// The gravity of the ad on the screen.
+	/// The gravity of ad on the screen.
 	/// </summary>
 	public enum Gravity : int
 	{

@@ -6,7 +6,7 @@ namespace NendUnityPlugin.Callback
 	/// <summary>
 	/// Event callbacks for interstitial ad.
 	/// </summary>
-	/// \deprecated Use EventHandler instead.
+	/// \deprecated Use <c>EventHandler</c> instead.
 	[Obsolete ("This interface is obsolete; use EventHandler instead")]
 	public interface NendAdInterstitialCallback
 	{
@@ -29,7 +29,7 @@ namespace NendUnityPlugin.Callback
 		void OnClickInterstitialAd (NendAdInterstitialClickType clickType);
 		
 		/// <summary>
-		/// Invoked when try to display ad.
+		/// Invoked when ad is being displayed.
 		/// </summary>
 		/// <param name="showResult">Show result.</param>
 		/// \sa NendUnityPlugin.Common.NendAdInterstitialShowResult
@@ -67,7 +67,7 @@ namespace NendUnityPlugin.Callback
 		void OnClickInterstitialAd (NendAdInterstitialClickType clickType, string spotId);
 		
 		/// <summary>
-		/// Invoked when try to display ad.
+		/// Invoked when ad is being displayed.
 		/// </summary>
 		/// <param name="showResult">Show result.</param>
 		/// <param name="spotId">Spot id which event occurred.</param>

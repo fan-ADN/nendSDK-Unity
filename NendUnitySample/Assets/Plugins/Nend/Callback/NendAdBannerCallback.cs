@@ -6,7 +6,7 @@ namespace NendUnityPlugin.Callback
 	/// <summary>
 	/// Event callbacks for banner ad.
 	/// </summary>
-	/// \deprecated Use EventHandler instead.
+	/// \deprecated Use <c>EventHandler</c> instead.
 	[Obsolete ("This interface is obsolete; use EventHandler instead")]
 	public interface NendAdBannerCallback
 	{
@@ -43,7 +43,7 @@ namespace NendUnityPlugin.Callback
 		void OnFailToReceiveBannerAd (NendErrorCode errorCode, string message);
 		
 		/// <summary>
-		/// Invoked when ad is back on the screen.
+		/// invoked when ad comes back to screen.
 		/// </summary>
 		/// \warning It is not invoked when the platform is iOS.
 		/// \deprecated Use NendUnityPlugin.AD.NendAdBanner.AdBacked instead.

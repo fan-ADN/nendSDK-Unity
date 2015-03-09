@@ -5,9 +5,6 @@ namespace NendUnityPlugin.Layout
 	/// </summary>
 	public interface NendAdLayoutBuilder
 	{
-		/// <summary>
-		/// Build layout parameter.
-		/// </summary>
 		string Build ();
 	}
 }
