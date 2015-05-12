@@ -18,6 +18,8 @@ nendSDK Unityプラグインのサンプルプロジェクトです。
 
 ## Usage
 
+* [事前準備](https://github.com/fan-ADN/nendSDK-Unity/wiki/事前準備)および[Unityパッケージのインポート](https://github.com/fan-ADN/nendSDK-Unity/wiki/Unityパッケージのインポート)を参考に、プロジェクトにUnityプラグインをインポートしてください。
+
 * **Android**
 
   UnityPlayerでapkファイルを作成し、実機にインストールしてください。  
