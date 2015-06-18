@@ -10,7 +10,3 @@
 *.pidb
 *.userprefs
 *.DS_Store
-
-Plugins/
-!google-play-services.*
-!version.*
