@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_ANDROID
+using UnityEngine;
 
 using NendUnityPlugin.AD;
 using NendUnityPlugin.Layout;
@@ -79,7 +80,6 @@ public class IconScene : BaseScene
 			             .MarginLeft (16)
 			             .MarginTop (16));
 		});
-#if UNITY_ANDROID
 		RegisterAction ("UpperLeftWithClearancePx", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.VERTICAL)
@@ -87,7 +87,6 @@ public class IconScene : BaseScene
 			             .MarginTop (16)
 			             .Unit (ComplexUnit.PX));
 		});
-#endif
 		RegisterAction ("LowerRightWithClearance", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.VERTICAL)
@@ -95,7 +94,6 @@ public class IconScene : BaseScene
 			             .MarginRight (16)
                          .MarginBottom (16));
 		});
-#if UNITY_ANDROID
 		RegisterAction ("LowerRightWithClearancePx", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.VERTICAL)
@@ -104,14 +102,12 @@ public class IconScene : BaseScene
                          .MarginBottom (16)
                          .Unit (ComplexUnit.PX));
 		});
-#endif
 		RegisterAction ("CenterTopWithClearance", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.VERTICAL)
 			             .Gravity ((int)Gravity.CENTER_HORIZONTAL | (int)Gravity.TOP)
                          .MarginTop (16));
 		});
-#if UNITY_ANDROID
 		RegisterAction ("CenterTopWithClearancePx", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.VERTICAL)
@@ -119,7 +115,6 @@ public class IconScene : BaseScene
                          .MarginTop (16)
                          .Unit (ComplexUnit.PX));
 		});
-#endif
 		RegisterAction ("CenterLeftWithClearance", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.VERTICAL)
@@ -138,7 +133,6 @@ public class IconScene : BaseScene
 			             .Gravity ((int)Gravity.CENTER_HORIZONTAL | (int)Gravity.BOTTOM)
                          .MarginBottom (16));
 		});
-#if UNITY_ANDROID
 		RegisterAction ("CenterBottomWithClearancePx", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.VERTICAL)
@@ -146,7 +140,6 @@ public class IconScene : BaseScene
                          .MarginBottom (16)
                          .Unit (ComplexUnit.PX));
 		});
-#endif
 		RegisterAction ("ToVertical", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ().Orientation (Orientation.VERTICAL));
 		});
@@ -221,7 +214,6 @@ public class IconScene : BaseScene
 			             .Size (2, 80)
 			             .Size (3, 60));
 		});
-#if UNITY_ANDROID
 		RegisterAction ("SizeChangePx", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.HORIZONTAL)
@@ -238,7 +230,6 @@ public class IconScene : BaseScene
 			             .Size (3, 150)
 			             .Unit (ComplexUnit.PX));
 		});
-#endif
 		RegisterAction ("ResetSize", delegate() {
 			icon.Layout (new NendAdIconLayoutBuilder ()
 			             .Orientation (Orientation.HORIZONTAL)
@@ -349,3 +340,4 @@ public class IconScene : BaseScene
 		});
 	}
 }
+#endif
