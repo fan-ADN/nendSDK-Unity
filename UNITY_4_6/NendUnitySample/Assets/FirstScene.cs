@@ -9,7 +9,9 @@ using NendUnityPlugin.Common;
 public class FirstScene : BaseScene
 {
 	private const string bannerGameObject = "NendAdBanner1";
+#if UNITY_ANDROID
 	private const string iconGameObject = "NendAdIcon1";
+#endif
 	private static bool isResumeNeeded = false;
 	private List<NendAd> adList = null;
 
@@ -20,34 +22,37 @@ public class FirstScene : BaseScene
 
 		Debug.Log ("Start() => " + gameObject.name);
 
-		NendAdBanner banner = NendUtils.GetBannerComponent (bannerGameObject);
-		NendAdIcon icon = NendUtils.GetIconComponent (iconGameObject);
 		adList = new List<NendAd> ();
-		adList.Add (banner);
-		adList.Add (icon);
 
-		// attach EventHandlers
+		NendAdBanner banner = NendUtils.GetBannerComponent (bannerGameObject);
+		adList.Add (banner);
+
 		banner.AdLoaded += OnFinishLoadBannerAd;
 		banner.AdReceived += OnReceiveBannerAd;
 		banner.AdFailedToReceive += OnFailToReceiveBannerAd;
 		banner.AdClicked += OnClickBannerAd;
 		banner.AdBacked += OnDismissScreen;
 
+#if UNITY_ANDROID
+		NendAdIcon icon = NendUtils.GetIconComponent (iconGameObject);
+		adList.Add (icon);
+
 		icon.AdLoaded += OnFinishLoadIconAd;
 		icon.AdReceived += OnReceiveIconAd;
 		icon.AdFailedToReceive += OnFailToReceiveIconAd;
 		icon.AdClicked += OnClickIconAd;
-
+#endif
+	
 		RegisterAction ("Next", delegate() {
 			LoadScene("Second");
 		});
 		RegisterAction ("BannerLayout", delegate() {
 			LoadScene("Banner");
 		});
+#if UNITY_ANDROID
 		RegisterAction ("IconLayout", delegate() {
 			LoadScene("Icon");
 		});
-#if UNITY_ANDROID
 		RegisterAction ("Exit", delegate() {
 			// Show the interstitial ad(upon completion)
 			NendAdInterstitial.Instance.Finish ();
@@ -75,11 +80,13 @@ public class FirstScene : BaseScene
 				banner.AdClicked -= OnClickBannerAd;
 				banner.AdBacked -= OnDismissScreen;
 			} else {
+#if UNITY_ANDROID
 				NendAdIcon icon = (NendAdIcon)ad;
 				icon.AdLoaded -= OnFinishLoadIconAd;
 				icon.AdReceived -= OnReceiveIconAd;
 				icon.AdFailedToReceive -= OnFailToReceiveIconAd;
 				icon.AdClicked -= OnClickIconAd;
+#endif
 			}
 		}
 	}
@@ -110,7 +117,7 @@ public class FirstScene : BaseScene
 	
 	public void OnFailToReceiveBannerAd (object sender, NendAdErrorEventArgs args) 
 	{
-		Debug.Log (bannerGameObject + " -> OnFailToReceiveBannerAd: " + args.Message);
+		Debug.Log (bannerGameObject + " -> OnFailToReceiveBannerAd: " + args.ErrorCode.ToString () + ", " + args.Message);
 	}
 	
 	public void OnDismissScreen (object sender, EventArgs args) 
@@ -118,6 +125,7 @@ public class FirstScene : BaseScene
 		Debug.Log (bannerGameObject + " -> OnDismissScreen");
 	}
 
+#if UNITY_ANDROID
 	public void OnFinishLoadIconAd (object sender, EventArgs args) 
 	{
 		Debug.Log (iconGameObject + " -> OnFinishLoadIconAd");
@@ -137,5 +145,6 @@ public class FirstScene : BaseScene
 	{
 		Debug.Log (iconGameObject + " -> OnFailToReceiveIconAd: " + args.Message);
 	}
+#endif
 	#endregion
 }
