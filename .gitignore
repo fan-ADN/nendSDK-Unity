@@ -11,6 +11,5 @@
 *.userprefs
 *.DS_Store
 
-UNITY_*_*/NendUnitySample/Assets/Plugins/Nend*
-UNITY_*_*/NendUnitySample/Assets/Plugins/iOS*
-UNITY_*_*/NendUnitySample/Assets/Plugins/Android/nend*
+UNITY_*_*/NendUnitySample/Assets/Plugins*
+UNITY_*_*/NendUnitySample/Assets/Editor*
