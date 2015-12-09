@@ -8,13 +8,23 @@ nendSDK Unityプラグインのサンプルプロジェクトです。
 
 ## Description
 
-* UNITY_4_6
+* UNITY_4
 
-  Unity4.6向けのサンプルプロジェクトです。
+  Unity4向けのサンプルプロジェクトです。
 
-* UNITY_5_1
+* UNITY_5
 
-  Unity5.1向けのサンプルプロジェクトです。
+  Unity5向けのサンプルプロジェクトです。
+
+## Requirement
+
+* UNITY_4
+
+  Unity4.6.9
+
+* UNITY_5
+
+  Unity5.3.0
 
 ## Usage
 
@@ -26,7 +36,8 @@ nendSDK Unityプラグインのサンプルプロジェクトです。
 
 * **iOS**
 
-  Xcodeプロジェクトにエクスポートしてビルドしてください。
+  Xcodeプロジェクトにエクスポートしてビルドしてください。  
+  UNITY_5の場合は、Xcodeで`AdSupport.framework`を追加してください。
 
 **動作確認は実機上で行ってください。**  
 **UnityのGameウィンドウおよびシミュレータでは広告が表示されません。**
