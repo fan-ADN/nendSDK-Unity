@@ -1,5 +1,5 @@
 # nendSDK-Unity Sample Project
-![ロゴ](https://github.com/fan-ADN/nendSDK-Android/blob/master/Sample/res/drawable/nend_logo.png)
+![ロゴ](https://github.com/fan-ADN/nendSDK-Unity/blob/master/UNITY_5_1/NendUnitySample/Assets/nend_logo.png)
 
 ## Overview
 
