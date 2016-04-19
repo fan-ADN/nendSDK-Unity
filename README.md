@@ -1,6 +1,3 @@
-# nendSDK-Unity Sample Project
-![ロゴ](https://github.com/fan-ADN/nendSDK-Unity/blob/master/UNITY_5/NendUnitySample/Assets/nend_logo.png)
-
 ## Overview
 
 nendSDK Unityプラグインのサンプルプロジェクトです。  
