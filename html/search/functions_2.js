@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['getbannercomponent',['GetBannerComponent',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html#ab4681f35e034f663d07528cdffee9ded',1,'NendUnityPlugin::Common::NendUtils']]],
-  ['geticoncomponent',['GetIconComponent',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html#a20b16bf1bc7d2e846197fb982960a013',1,'NendUnityPlugin::Common::NendUtils']]],
-  ['gravity',['Gravity',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_default_layout_builder.html#abebe8725e88408ea8c7ff349bdb2f3c1',1,'NendUnityPlugin.Layout.NendAdDefaultLayoutBuilder.Gravity()'],['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_icon_layout_builder.html#ad1c80ced5a59145158f73dce767069ff',1,'NendUnityPlugin.Layout.NendAdIconLayoutBuilder.Gravity()']]]
+  ['hide',['Hide',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html#a8cf9b30f5566964400c369bd044037ab',1,'NendUnityPlugin.AD.NendAd.Hide()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a56ba47b195b372d506528e794da9f821',1,'NendUnityPlugin.AD.NendAdBanner.Hide()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#adcb0205927da4de63640a9fbcfada4f5',1,'NendUnityPlugin.AD.NendAdIcon.Hide()']]]
 ];

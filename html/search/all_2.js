@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['callback',['Callback',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a980f341727aae676c6a29343427bec95',1,'NendUnityPlugin.AD.NendAdBanner.Callback()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#a573148ddbed217c6580ba232f4994e2e',1,'NendUnityPlugin.AD.NendAdIcon.Callback()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#ac55674bb9ffdbe98e3639c12250776fd',1,'NendUnityPlugin.AD.NendAdInterstitial.Callback()']]],
   ['center_5fhorizontal',['CENTER_HORIZONTAL',['../namespace_nend_unity_plugin_1_1_common.html#a8aa5efc54dabd2a35e51892bec9e28d6a8e0df4c9801cd8a497c6763895aeb1ab',1,'NendUnityPlugin::Common']]],
   ['center_5fvertical',['CENTER_VERTICAL',['../namespace_nend_unity_plugin_1_1_common.html#a8aa5efc54dabd2a35e51892bec9e28d6a2cc924691e026a785a32f6843aeb8fba',1,'NendUnityPlugin::Common']]],
   ['clicktype',['ClickType',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_click_event_args.html#a12983181e636384fbf17688d7ae9937c',1,'NendUnityPlugin::AD::NendAdInterstitialClickEventArgs']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['complexunit',['ComplexUnit',['../namespace_nend_unity_plugin_1_1_layout.html#a506052e088d9ad5e6fd3095641e044d3',1,'NendUnityPlugin::Layout']]]
+  ['advertisingexplicitly',['AdvertisingExplicitly',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_nend_ad_native_view.html#ad125f48c1636be886c0b7cebc2842a76',1,'NendUnityPlugin::AD::Native::NendAdNativeView']]]
 ];
