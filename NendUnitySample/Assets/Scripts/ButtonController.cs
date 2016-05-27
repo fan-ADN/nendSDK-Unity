@@ -41,6 +41,11 @@ public class ButtonController : MonoBehaviour {
 		SceneManager.LoadScene ("Menu");
 	}
 
+	public void OnClickTelop ()
+	{
+		SceneManager.LoadScene ("Telop");
+	}
+
 	public void OnClickBack ()
 	{
 		SceneManager.LoadScene ("First");
