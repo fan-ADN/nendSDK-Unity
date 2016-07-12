@@ -22,11 +22,6 @@ public class NativeAdTableViewCell : TableViewCell
 		Debug.Log ("OnShown: " + view.ViewTag);
 	}
 
-	public void OnFailedToShow (NendAdNativeView view)
-	{
-		Debug.Log ("OnFailedToShow: " + view.ViewTag);
-	}
-
 	public void OnClick (NendAdNativeView view)
 	{
 		Debug.Log ("OnClick: " + view.ViewTag);

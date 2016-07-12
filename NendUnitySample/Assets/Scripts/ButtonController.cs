@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-using NendUnityPlugin.AD.Native.Utils;
+using NendUnityPlugin.Common;
 
 public class ButtonController : MonoBehaviour {
 
@@ -44,6 +44,11 @@ public class ButtonController : MonoBehaviour {
 	public void OnClickTelop ()
 	{
 		SceneManager.LoadScene ("Telop");
+	}
+
+	public void OnClickAdvanced ()
+	{
+		SceneManager.LoadScene ("Advanced");
 	}
 
 	public void OnClickBack ()

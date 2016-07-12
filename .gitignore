@@ -11,5 +11,5 @@
 *.userprefs
 *.DS_Store
 
-NendUnitySample/Assets/Plugins*
-NendUnitySample/Assets/Editor*
+NendUnitySample/Assets/NendAd/*
+NendUnitySample/Assets/NendAd.meta
