@@ -1,20 +1,5 @@
 var searchData=
 [
-  ['nativeadviewevent',['NativeAdViewEvent',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_events_1_1_native_ad_view_event.html',1,'NendUnityPlugin::AD::Native::Events']]],
-  ['nativeadviewfailedtoloadevent',['NativeAdViewFailedToLoadEvent',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_events_1_1_native_ad_view_failed_to_load_event.html',1,'NendUnityPlugin::AD::Native::Events']]],
-  ['nendad',['NendAd',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html',1,'NendUnityPlugin::AD']]],
-  ['nendadbanner',['NendAdBanner',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html',1,'NendUnityPlugin::AD']]],
-  ['nendaddefaultlayoutbuilder',['NendAdDefaultLayoutBuilder',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_default_layout_builder.html',1,'NendUnityPlugin::Layout']]],
-  ['nendaderroreventargs',['NendAdErrorEventArgs',['../class_nend_unity_plugin_1_1_common_1_1_nend_ad_error_event_args.html',1,'NendUnityPlugin::Common']]],
-  ['nendadicon',['NendAdIcon',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html',1,'NendUnityPlugin::AD']]],
-  ['nendadiconlayoutbuilder',['NendAdIconLayoutBuilder',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_icon_layout_builder.html',1,'NendUnityPlugin::Layout']]],
-  ['nendadinterstitial',['NendAdInterstitial',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html',1,'NendUnityPlugin::AD']]],
-  ['nendadinterstitialclickeventargs',['NendAdInterstitialClickEventArgs',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_click_event_args.html',1,'NendUnityPlugin::AD']]],
-  ['nendadinterstitialloadeventargs',['NendAdInterstitialLoadEventArgs',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_load_event_args.html',1,'NendUnityPlugin::AD']]],
-  ['nendadinterstitialshoweventargs',['NendAdInterstitialShowEventArgs',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial_show_event_args.html',1,'NendUnityPlugin::AD']]],
-  ['nendadlayoutbuilder',['NendAdLayoutBuilder',['../interface_nend_unity_plugin_1_1_layout_1_1_nend_ad_layout_builder.html',1,'NendUnityPlugin::Layout']]],
-  ['nendadlogger',['NendAdLogger',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_utils_1_1_nend_ad_logger.html',1,'NendUnityPlugin::AD::Native::Utils']]],
-  ['nendadnative',['NendAdNative',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_nend_ad_native.html',1,'NendUnityPlugin::AD::Native']]],
-  ['nendadnativeview',['NendAdNativeView',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_nend_ad_native_view.html',1,'NendUnityPlugin::AD::Native']]],
-  ['nendutils',['NendUtils',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html',1,'NendUnityPlugin::Common']]]
+  ['inativead',['INativeAd',['../interface_nend_unity_plugin_1_1_a_d_1_1_native_1_1_i_native_ad.html',1,'NendUnityPlugin::AD::Native']]],
+  ['inativeadclient',['INativeAdClient',['../interface_nend_unity_plugin_1_1_a_d_1_1_native_1_1_i_native_ad_client.html',1,'NendUnityPlugin::AD::Native']]]
 ];

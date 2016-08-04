@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getbannercomponent',['GetBannerComponent',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html#ab4681f35e034f663d07528cdffee9ded',1,'NendUnityPlugin::Common::NendUtils']]],
-  ['geticoncomponent',['GetIconComponent',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html#a20b16bf1bc7d2e846197fb982960a013',1,'NendUnityPlugin::Common::NendUtils']]],
-  ['gravity',['Gravity',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_default_layout_builder.html#abebe8725e88408ea8c7ff349bdb2f3c1',1,'NendUnityPlugin.Layout.NendAdDefaultLayoutBuilder.Gravity()'],['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_icon_layout_builder.html#ad1c80ced5a59145158f73dce767069ff',1,'NendUnityPlugin.Layout.NendAdIconLayoutBuilder.Gravity()']]]
+  ['destroy',['Destroy',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html#a9e60be02c7586ba99f0fed84965a18c4',1,'NendUnityPlugin.AD.NendAd.Destroy()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a97d8bf6fc3fb5b5893b51fa0461fab59',1,'NendUnityPlugin.AD.NendAdBanner.Destroy()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#aa60885f6d416492924fa722cce287d16',1,'NendUnityPlugin.AD.NendAdIcon.Destroy()']]],
+  ['disableautoreload',['DisableAutoReload',['../interface_nend_unity_plugin_1_1_a_d_1_1_native_1_1_i_native_ad_client.html#aa315735356b4f5cd82e3313b4426f85e',1,'NendUnityPlugin.AD.Native.INativeAdClient.DisableAutoReload()'],['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_nend_ad_native.html#ab419c5a4856e8718a54d8fd40f85abb8',1,'NendUnityPlugin.AD.Native.NendAdNative.DisableAutoReload()']]],
+  ['dismiss',['Dismiss',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#ab90d53a7b479ff1a7156febc27ab0093',1,'NendUnityPlugin::AD::NendAdInterstitial']]]
 ];

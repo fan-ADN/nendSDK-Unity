@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['ad',['AD',['../namespace_nend_unity_plugin_1_1_a_d_1_1_native.html#a3d3a21e959aacc13937da9c5e3c8037dae182ebbc166d73366e7986813a7fc5f1',1,'NendUnityPlugin::AD::Native']]],
   ['ad_5fcannot_5fdisplay',['AD_CANNOT_DISPLAY',['../namespace_nend_unity_plugin_1_1_common.html#a2360770348236964523c284fe691c3a4a921d3150d36af0793f8204033f4e20d3',1,'NendUnityPlugin::Common']]],
   ['ad_5fdownload_5fincomplete',['AD_DOWNLOAD_INCOMPLETE',['../namespace_nend_unity_plugin_1_1_common.html#a2360770348236964523c284fe691c3a4a000968292f1fba2b7c2224440861a9ae',1,'NendUnityPlugin::Common']]],
   ['ad_5ffrequency_5fnot_5frechable',['AD_FREQUENCY_NOT_RECHABLE',['../namespace_nend_unity_plugin_1_1_common.html#a2360770348236964523c284fe691c3a4abd8be12d9a5eee6104ef3e490c82d2aa',1,'NendUnityPlugin::Common']]],

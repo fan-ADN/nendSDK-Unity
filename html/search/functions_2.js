@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hide',['Hide',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html#a8cf9b30f5566964400c369bd044037ab',1,'NendUnityPlugin.AD.NendAd.Hide()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a56ba47b195b372d506528e794da9f821',1,'NendUnityPlugin.AD.NendAdBanner.Hide()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#adcb0205927da4de63640a9fbcfada4f5',1,'NendUnityPlugin.AD.NendAdIcon.Hide()']]]
+  ['enableautoreload',['EnableAutoReload',['../interface_nend_unity_plugin_1_1_a_d_1_1_native_1_1_i_native_ad_client.html#a117b54bfe4663e4fec64bdb8c0df7a02',1,'NendUnityPlugin.AD.Native.INativeAdClient.EnableAutoReload()'],['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_nend_ad_native.html#a7c787a96125d21531e7f37d89cf73f30',1,'NendUnityPlugin.AD.Native.NendAdNative.EnableAutoReload()']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unit',['Unit',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_default_layout_builder.html#a663dc5a7b10bad1367e492548e87e9f2',1,'NendUnityPlugin::Layout::NendAdDefaultLayoutBuilder']]],
-  ['unregisteradview',['UnregisterAdView',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_nend_ad_native.html#ab8f1ecb376567de6d602a3652a93e24f',1,'NendUnityPlugin::AD::Native::NendAdNative']]]
+  ['pause',['Pause',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad.html#a7c6f80794d7fb7a4d314f86d359d319d',1,'NendUnityPlugin.AD.NendAd.Pause()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html#a046725552963ff5138bf0ddb6e838a80',1,'NendUnityPlugin.AD.NendAdBanner.Pause()'],['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html#aadae47832b19c160783df7c60d3e6fbe',1,'NendUnityPlugin.AD.NendAdIcon.Pause()']]]
 ];
