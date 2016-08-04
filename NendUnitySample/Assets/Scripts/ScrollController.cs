@@ -41,12 +41,12 @@ public class ScrollController : MonoBehaviour
 		}
 	}
 
-	public void onDisplayAd (NendAdNativeView view)
+	public void OnDisplayAd (NendAdNativeView view)
 	{
 		m_Scroller.SetMaxScroll ();
 		m_CanScroll = true;
 	}
-
+		
 	private abstract class Scroller
 	{
 		protected Text m_Text;
