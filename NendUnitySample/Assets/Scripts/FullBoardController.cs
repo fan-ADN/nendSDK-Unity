@@ -4,14 +4,16 @@ using UnityEngine.SceneManagement;
 
 using NendUnityPlugin.AD.FullBoard;
 
-public class Controller : MonoBehaviour {
+public class FullBoardController : MonoBehaviour
+{
 
 	private NendAdFullBoard m_Ad;
 	public Text text;
 	private string m_Status = "";
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		#if UNITY_ANDROID && !UNITY_EDITOR
 		m_Ad = NendAdFullBoard.NewFullBoardAd ("485520", "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff");
 		#elif UNITY_IPHONE && !UNITY_EDITOR
@@ -29,10 +31,10 @@ public class Controller : MonoBehaviour {
 				m_Status = "FailedAdRequest";
 				break;
 			case NendAdFullBoard.FullBoardAdErrorType.FailedDownloadImage:
-				m_Status = "FailedAdRequest";
+				m_Status = "FailedDownloadImage";
 				break;
 			case NendAdFullBoard.FullBoardAdErrorType.InvalidAdSpaces:
-				m_Status = "FailedAdRequest";
+				m_Status = "InvalidAdSpaces";
 				break;
 			}
 		};
@@ -49,24 +51,28 @@ public class Controller : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		text.text = m_Status;
 	}
-		
-	public void LoadAd () {
+
+	public void LoadAd ()
+	{
 		if (m_Ad != null) {
 			m_Status = "Loading...";
 			m_Ad.Load ();
 		}
 	}
 
-	public void ShowAd () {
+	public void ShowAd ()
+	{
 		if (m_Ad != null) {
 			m_Ad.Show ();
 		}
 	}
 
-	public void Back () {
+	public void Back ()
+	{
 		SceneManager.LoadScene ("First");
 	}
 }
