@@ -60,6 +60,9 @@ public class FirstScene : BaseScene
 		RegisterAction ("NativeAd", delegate() {
 			LoadScene("Menu");
 		});
+		RegisterAction ("FullBoard", delegate() {
+			LoadScene("FullBoard");
+		});
 		RegisterAction ("Quit", delegate() {
 			Application.Quit ();
 		});
