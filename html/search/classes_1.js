@@ -7,6 +7,7 @@ var searchData=
   ['nendadbanner',['NendAdBanner',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html',1,'NendUnityPlugin::AD']]],
   ['nendaddefaultlayoutbuilder',['NendAdDefaultLayoutBuilder',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_default_layout_builder.html',1,'NendUnityPlugin::Layout']]],
   ['nendaderroreventargs',['NendAdErrorEventArgs',['../class_nend_unity_plugin_1_1_common_1_1_nend_ad_error_event_args.html',1,'NendUnityPlugin::Common']]],
+  ['nendadfullboard',['NendAdFullBoard',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html',1,'NendUnityPlugin::AD::FullBoard']]],
   ['nendadicon',['NendAdIcon',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html',1,'NendUnityPlugin::AD']]],
   ['nendadiconlayoutbuilder',['NendAdIconLayoutBuilder',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_icon_layout_builder.html',1,'NendUnityPlugin::Layout']]],
   ['nendadinterstitial',['NendAdInterstitial',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html',1,'NendUnityPlugin::AD']]],

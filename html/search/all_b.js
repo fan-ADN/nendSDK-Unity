@@ -3,6 +3,7 @@ var searchData=
   ['ad',['AD',['../namespace_nend_unity_plugin_1_1_a_d.html',1,'NendUnityPlugin']]],
   ['common',['Common',['../namespace_nend_unity_plugin_1_1_common.html',1,'NendUnityPlugin']]],
   ['events',['Events',['../namespace_nend_unity_plugin_1_1_a_d_1_1_native_1_1_events.html',1,'NendUnityPlugin::AD::Native']]],
+  ['fullboard',['FullBoard',['../namespace_nend_unity_plugin_1_1_a_d_1_1_full_board.html',1,'NendUnityPlugin::AD']]],
   ['handlers',['Handlers',['../namespace_nend_unity_plugin_1_1_a_d_1_1_native_1_1_handlers.html',1,'NendUnityPlugin::AD::Native']]],
   ['layout',['Layout',['../namespace_nend_unity_plugin_1_1_layout.html',1,'NendUnityPlugin']]],
   ['native',['Native',['../namespace_nend_unity_plugin_1_1_a_d_1_1_native.html',1,'NendUnityPlugin::AD']]],
@@ -13,6 +14,12 @@ var searchData=
   ['nendadbanner',['NendAdBanner',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_banner.html',1,'NendUnityPlugin::AD']]],
   ['nendaddefaultlayoutbuilder',['NendAdDefaultLayoutBuilder',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_default_layout_builder.html',1,'NendUnityPlugin::Layout']]],
   ['nendaderroreventargs',['NendAdErrorEventArgs',['../class_nend_unity_plugin_1_1_common_1_1_nend_ad_error_event_args.html',1,'NendUnityPlugin::Common']]],
+  ['nendadfullboard',['NendAdFullBoard',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html',1,'NendUnityPlugin::AD::FullBoard']]],
+  ['nendadfullboardclick',['NendAdFullBoardClick',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#aa5728b59a3e4fa6044512073f00fdf19',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['nendadfullboarddismiss',['NendAdFullBoardDismiss',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a26bb73fe832f5ab431706fdc1fc48f94',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['nendadfullboardfailedtoload',['NendAdFullBoardFailedToLoad',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#ab82b9cb27a1e87b3f96fae0f9644c06b',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['nendadfullboardloaded',['NendAdFullBoardLoaded',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a7d3378edfbc314c8ac3a091b466bcfdd',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['nendadfullboardshown',['NendAdFullBoardShown',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a52c81b9750f741ff2895915d833b380f',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
   ['nendadicon',['NendAdIcon',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_icon.html',1,'NendUnityPlugin::AD']]],
   ['nendadiconlayoutbuilder',['NendAdIconLayoutBuilder',['../class_nend_unity_plugin_1_1_layout_1_1_nend_ad_icon_layout_builder.html',1,'NendUnityPlugin::Layout']]],
   ['nendadinterstitial',['NendAdInterstitial',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html',1,'NendUnityPlugin::AD']]],
@@ -33,6 +40,7 @@ var searchData=
   ['nendunityplugin',['NendUnityPlugin',['../namespace_nend_unity_plugin.html',1,'']]],
   ['nendutils',['NendUtils',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html',1,'NendUnityPlugin::Common']]],
   ['newclient',['NewClient',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_native_ad_client_factory.html#a86600326599e5b7360f06338e43fb33c',1,'NendUnityPlugin::AD::Native::NativeAdClientFactory']]],
+  ['newfullboardad',['NewFullBoardAd',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a2f2a9d031f16c66e07495fca395ef83d',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
   ['none',['None',['../class_nend_unity_plugin_1_1_common_1_1_nend_ad_logger.html#a7844eca7e698fcdcade1472517fc3877a6adf97f83acf6453d4a6a4b1070f3754',1,'NendUnityPlugin::Common::NendAdLogger']]],
   ['utils',['Utils',['../namespace_nend_unity_plugin_1_1_a_d_1_1_native_1_1_utils.html',1,'NendUnityPlugin::AD::Native']]]
 ];
