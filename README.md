@@ -7,7 +7,7 @@ nendSDK Unityプラグインのサンプルプロジェクトです。
 
 * Unity5.3以上
 * Android2.3.3以上
-* iOS7.0以上
+* iOS8.0以上
 
 ## Usage
 
