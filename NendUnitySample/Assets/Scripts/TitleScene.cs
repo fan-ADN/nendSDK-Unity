@@ -38,11 +38,7 @@ public class TitleScene : MonoBehaviour
 #if UNITY_IPHONE
 		apiKey = "308c2499c75c4a192f03c02b2fcebd16dcb45cc9";
 		spotId = "213208";
-		#if UNITY_5
 		Handheld.SetActivityIndicatorStyle(UnityEngine.iOS.ActivityIndicatorStyle.Gray);
-		#else
-		Handheld.SetActivityIndicatorStyle(iOSActivityIndicatorStyle.Gray);
-		#endif
 #elif UNITY_ANDROID
 		apiKey = "8c278673ac6f676dae60a1f56d16dad122e23516";
 		spotId = "213206";
