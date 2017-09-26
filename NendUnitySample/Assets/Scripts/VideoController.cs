@@ -11,7 +11,7 @@ public class VideoController : MonoBehaviour
 	private NendAdInterstitialVideo m_InterstitialVideoAd;
 	private NendAdRewardedVideo m_RewardedVideoAd;
 
-	#if !UNITY_EDITOR && UNITY_IPHONE
+	#if !UNITY_EDITOR && UNITY_IOS
 	private string interstitialSpotId = "802557", interstitialApiKey = "b6a97b05dd088b67f68fe6f155fb3091f302b48b";
 	private string rewardSpotId = "802555", rewardApiKey = "ca80ed7018734d16787dbda24c9edd26c84c15b8";
 	private string fallbackSpotId = "485504", fallbackApiKey = "30fda4b3386e793a14b27bedb4dcd29f03d638e5";

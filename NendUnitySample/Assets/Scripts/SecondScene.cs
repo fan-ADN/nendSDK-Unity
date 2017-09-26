@@ -69,7 +69,7 @@ public class SecondScene : BaseScene
 	private IEnumerator ShowAdDelay ()
 	{
 		yield return new WaitForSeconds (0.5f);
-#if UNITY_IPHONE
+#if UNITY_IOS
 		NendAdInterstitial.Instance.Show("213208");
 #elif UNITY_ANDROID
 		NendAdInterstitial.Instance.Show("213206");
