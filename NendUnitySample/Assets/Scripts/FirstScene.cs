@@ -63,6 +63,9 @@ public class FirstScene : BaseScene
 		RegisterAction ("FullBoard", delegate() {
 			LoadScene("FullBoard");
 		});
+		RegisterAction ("Video", delegate() {
+			LoadScene("Video");
+		});
 		RegisterAction ("Quit", delegate() {
 			Application.Quit ();
 		});
