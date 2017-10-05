@@ -5,6 +5,18 @@ var searchData=
   ['nendadfullboardfailedtoload',['NendAdFullBoardFailedToLoad',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#ab82b9cb27a1e87b3f96fae0f9644c06b',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
   ['nendadfullboardloaded',['NendAdFullBoardLoaded',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a7d3378edfbc314c8ac3a091b466bcfdd',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
   ['nendadfullboardshown',['NendAdFullBoardShown',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a52c81b9750f741ff2895915d833b380f',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['nendadvideoclick',['NendAdVideoClick',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#acbd04a8ce595298afb68acf34e328c5d',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideoclosed',['NendAdVideoClosed',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a4e17f72385d2090b4077810d6567591a',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideocompleted',['NendAdVideoCompleted',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a418607ebdc633fd6e2ccca38963e809d',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideofailedtoload',['NendAdVideoFailedToLoad',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a60cc771e485561a44fb972afcb7c7f03',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideofailedtoplay',['NendAdVideoFailedToPlay',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a2b16c3da62c411b26d48948dce5ce9dd',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideoinformationclick',['NendAdVideoInformationClick',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a8da6cefc6b24700b7f365c149eea5653',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideoloaded',['NendAdVideoLoaded',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a9d2ee7529dd5e3b77285327791c0686e',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideorewarded',['NendAdVideoRewarded',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_rewarded_video.html#ab30b6f4d660773f634f7feb18e64e85c',1,'NendUnityPlugin::AD::Video::NendAdRewardedVideo']]],
+  ['nendadvideoshown',['NendAdVideoShown',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a003069ee0e1ff4dbf0c76d14f88e95cf',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideostarted',['NendAdVideoStarted',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#ab2170c1928960b41ca83a24a8e003e4c',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
+  ['nendadvideostopped',['NendAdVideoStopped',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a85857b975b24fbffb6e3a80d82340a51',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
   ['newclient',['NewClient',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_native_ad_client_factory.html#a86600326599e5b7360f06338e43fb33c',1,'NendUnityPlugin::AD::Native::NativeAdClientFactory']]],
-  ['newfullboardad',['NewFullBoardAd',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a2f2a9d031f16c66e07495fca395ef83d',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]]
+  ['newfullboardad',['NewFullBoardAd',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a2f2a9d031f16c66e07495fca395ef83d',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['newvideoad',['NewVideoAd',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_interstitial_video.html#a0c6de77dbc6cd9ee81d479d67a9500fe',1,'NendUnityPlugin.AD.Video.NendAdInterstitialVideo.NewVideoAd()'],['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_rewarded_video.html#ad2625a4fc956d2b9be9fe3ca7b88316f',1,'NendUnityPlugin.AD.Video.NendAdRewardedVideo.NewVideoAd()']]]
 ];

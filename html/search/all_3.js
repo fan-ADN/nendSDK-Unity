@@ -6,6 +6,6 @@ var searchData=
   ['dip',['DIP',['../namespace_nend_unity_plugin_1_1_layout.html#a506052e088d9ad5e6fd3095641e044d3ab941a28ed6d936315cc87c8a5e15b1d6',1,'NendUnityPlugin::Layout']]],
   ['disableautoreload',['DisableAutoReload',['../interface_nend_unity_plugin_1_1_a_d_1_1_native_1_1_i_native_ad_client.html#aa315735356b4f5cd82e3313b4426f85e',1,'NendUnityPlugin.AD.Native.INativeAdClient.DisableAutoReload()'],['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_nend_ad_native.html#ab419c5a4856e8718a54d8fd40f85abb8',1,'NendUnityPlugin.AD.Native.NendAdNative.DisableAutoReload()']]],
   ['dismiss',['Dismiss',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#ab90d53a7b479ff1a7156febc27ab0093',1,'NendUnityPlugin::AD::NendAdInterstitial']]],
-  ['dispose',['Dispose',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a31dae19813bb2bcaaee1a2f1c61e47a0',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['dispose',['Dispose',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a31dae19813bb2bcaaee1a2f1c61e47a0',1,'NendUnityPlugin.AD.FullBoard.NendAdFullBoard.Dispose()'],['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#ad12e3c9364ceb663789bb9e54d54d7e2',1,'NendUnityPlugin.AD.Video.NendAdVideo.Dispose()']]],
   ['download',['DOWNLOAD',['../namespace_nend_unity_plugin_1_1_common.html#a42f658e9912447eb90d03e16e91f5fa1a631152daefc8201c641fa7a37c397dce',1,'NendUnityPlugin::Common']]]
 ];
