@@ -40,6 +40,18 @@ public class VideoController : MonoBehaviour
 	private void InitializeInterstitialVideo ()
 	{
 		m_InterstitialVideoAd = NendAdInterstitialVideo.NewVideoAd (interstitialSpotId, interstitialApiKey);
+
+		NendAdUserFeature userFeature = NendAdUserFeature.NewNendAdUserFeature ();
+		userFeature.gender = NendAdUserFeature.Gender.Female;
+		userFeature.SetBirthday (1985, 12, 31);
+		userFeature.age = 10;
+		userFeature.AddCustomFeature ("someString", "TestText");
+		userFeature.AddCustomFeature ("someInt", 1);
+		userFeature.AddCustomFeature ("someDouble", 23.4);
+		userFeature.AddCustomFeature ("someBool", true);
+		m_InterstitialVideoAd.UserFeature = userFeature;
+
+
 		m_InterstitialVideoAd.AddFallbackFullboard (fallbackSpotId, fallbackApiKey);
 
 		m_InterstitialVideoAd.AdLoaded += (instance) => {

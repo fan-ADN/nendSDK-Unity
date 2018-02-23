@@ -24,6 +24,7 @@ public class FullBoardController : MonoBehaviour
 
 		m_Ad.AdLoaded += (ad) => {
 			m_Status = "AdLoaded";
+			ad.IOSBackgroundColor = Color.green;
 		};
 		m_Ad.AdFailedToLoad += (ad, error) => {
 			switch (error) {
