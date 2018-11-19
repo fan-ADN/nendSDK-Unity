@@ -10,8 +10,9 @@ public class TitleScene : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		// attach EventHandler
-		NendAdInterstitial.Instance.AdLoaded += OnFinishLoadInterstitialAd;
+        NendAdLogger.LogLevel = NendAdLogger.NendAdLogLevel.Debug;
+        // attach EventHandler
+        NendAdInterstitial.Instance.AdLoaded += OnFinishLoadInterstitialAd;
 		StartCoroutine (LoadAd ());
 	}
 
