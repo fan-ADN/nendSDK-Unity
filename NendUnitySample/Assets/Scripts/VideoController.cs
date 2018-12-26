@@ -50,8 +50,8 @@ public class VideoController : MonoBehaviour
 		userFeature.AddCustomFeature ("someDouble", 23.4);
 		userFeature.AddCustomFeature ("someBool", true);
 		m_InterstitialVideoAd.UserFeature = userFeature;
-
-
+        m_InterstitialVideoAd.IsLocationEnabled = false;
+        m_InterstitialVideoAd.IsMuteStartPlaying = false;
 		m_InterstitialVideoAd.AddFallbackFullboard (fallbackSpotId, fallbackApiKey);
 
 		m_InterstitialVideoAd.AdLoaded += (instance) => {
