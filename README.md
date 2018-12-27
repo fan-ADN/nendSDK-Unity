@@ -7,7 +7,7 @@ nendSDK Unityプラグインの組み込み方法は [Wiki](https://github.com/f
 ## Requirement
 
 * Unity2017.4以上
-* Android4.0以上
+* Android4.1以上
 * iOS8.1以上
 
 ## Usage
