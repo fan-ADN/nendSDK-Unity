@@ -66,7 +66,10 @@ public class FirstScene : BaseScene
 		RegisterAction ("Video", delegate() {
 			LoadScene("Video");
 		});
-		RegisterAction ("Quit", delegate() {
+        RegisterAction("NativeVideoAd", delegate () {
+            LoadScene("NativeVideoMenu");
+        });
+        RegisterAction("Quit", delegate() {
 			Application.Quit ();
 		});
 
