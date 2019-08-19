@@ -132,8 +132,8 @@ public class SecondScene : BaseScene
 		case NendAdInterstitialShowResult.AD_LOAD_INCOMPLETE:
 			Debug.Log (">> OnShowInterstitialAd: AD_LOAD_INCOMPLETE");
 			break;
-		case NendAdInterstitialShowResult.AD_FREQUENCY_NOT_RECHABLE:
-			Debug.Log (">> OnShowInterstitialAd: AD_FREQUENCY_NOT_RECHABLE");
+		case NendAdInterstitialShowResult.AD_FREQUENCY_NOT_REACHABLE:
+			Debug.Log (">> OnShowInterstitialAd: AD_FREQUENCY_NOT_REACHABLE");
 			break;
 		case NendAdInterstitialShowResult.AD_DOWNLOAD_INCOMPLETE:
 			Debug.Log (">> OnShowInterstitialAd: AD_DOWNLOAD_INCOMPLETE");
