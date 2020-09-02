@@ -17,7 +17,7 @@ nendSDK Unityプラグインの組み込み方法は [Wiki](https://github.com/f
 
 * **Android**
 
-  UnityPlayerでapkファイルを作成し、実機にインストールしてください。  
+  UnityPlayerで`.apk`ファイルを作成し、実機にインストールしてください。  
 
 * **iOS**
 
