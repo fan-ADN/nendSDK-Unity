@@ -7,8 +7,9 @@ nendSDK Unityプラグインの組み込み方法は [Wiki](https://github.com/f
 ## Requirement
 
 * Unity `2017.4`以上
-* Android `4.1`以上
-* iOS `8.1`以上
+* Android `4.4`以上
+* iOS `9.0`以上
+  * iOSはXcodeプロジェクトのビルドに[CocoaPods](https://cocoapods.org)を事前にMacにインストールしておく必要があります。
 
 ## Usage
 

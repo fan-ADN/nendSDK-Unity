@@ -19,3 +19,5 @@ NendUnitySample/Assets/PlayServicesResolver/
 NendUnitySample/Assets/PlayServicesResolver.meta
 NendUnitySample/ProjectSettings/AndroidResolverDependencies.xml
 NendUnitySample/.vs/
+NendUnitySample/Assets/ExternalDependencyManager/
+NendUnitySample/Assets/ExternalDependencyManager.*
