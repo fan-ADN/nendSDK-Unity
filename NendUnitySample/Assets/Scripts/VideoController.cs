@@ -57,7 +57,7 @@ public class VideoController : MonoBehaviour
 		m_InterstitialVideoAd.AdLoaded += (instance) => {
 			// 広告ロード成功のコールバック
 			m_Status = "InterstitialVideoAd.AdLoaded";
-			Debug.Log ("Interstitial AdLoaded type = " + instance.adType);
+			Debug.Log ("Interstitial AdLoaded type = " + instance.AdType);
 		};
 		m_InterstitialVideoAd.AdFailedToLoad += (instance, errorCode) => {
 			// 広告ロード失敗のコールバック
@@ -121,7 +121,7 @@ public class VideoController : MonoBehaviour
 		m_RewardedVideoAd.AdLoaded += (instance) => {
 			// 広告ロード成功のコールバック
 			m_Status = "RewardedVideoAd.AdLoaded";
-			Debug.Log ("Rewarded AdLoaded type = " + instance.adType);
+			Debug.Log ("Rewarded AdLoaded type = " + instance.AdType);
 		};
 		m_RewardedVideoAd.AdFailedToLoad += (instance, errorCode) => {
 			// 広告ロード失敗のコールバック
