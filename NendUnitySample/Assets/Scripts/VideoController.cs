@@ -62,32 +62,41 @@ public class VideoController : MonoBehaviour
 		m_InterstitialVideoAd.AdFailedToLoad += (instance, errorCode) => {
 			// 広告ロード失敗のコールバック
 			m_Status = "InterstitialVideoAd.AdFailedToLoad";
+			Debug.Log ("Interstitial AdFailedToLoad");
 		};
 		m_InterstitialVideoAd.AdFailedToPlay += (instance) => {
 			// 再生失敗のコールバック
 			m_Status = "InterstitialVideoAd.AdFailedToPlay";
+			Debug.Log ("Interstitial AdFailedToPlay");
 		};
 		m_InterstitialVideoAd.AdShown += (instance) => {
 			// 広告表示のコールバック
+			Debug.Log ("Interstitial AdShown");
 		};
 		m_InterstitialVideoAd.AdStarted += (instance) => {
 			// 再生開始のコールバック
+			Debug.Log ("Interstitial AdStarted");
 		};
 		m_InterstitialVideoAd.AdStopped += (instance) => {
 			// 再生中断のコールバック
+			Debug.Log ("Interstitial AdStopped");
 		};
 		m_InterstitialVideoAd.AdCompleted += (instance) => {
 			// 再生完了のコールバック
+			Debug.Log ("Interstitial AdCompleted");
 		};
 		m_InterstitialVideoAd.AdClicked += (instance) => {
 			// 広告クリックのコールバック
+			Debug.Log ("Interstitial AdClicked");
 		};
 		m_InterstitialVideoAd.InformationClicked += (instance) => {
 			// オプトアウトクリックのコールバック
+			Debug.Log ("Interstitial InformationClicked");
 		};
 		m_InterstitialVideoAd.AdClosed += (instance) => {
 			// 広告クローズのコールバック
 			m_Status = "InterstitialVideoAd.AdClosed";
+			Debug.Log ("Interstitial AdClosed");
 		};
 	}
 
@@ -111,6 +120,7 @@ public class VideoController : MonoBehaviour
 		if (m_InterstitialVideoAd != null) {
 			m_InterstitialVideoAd.Release ();
 			m_InterstitialVideoAd = null;
+			Debug.Log ("ReleaseInterstitial");
 		}
 	}
 
@@ -126,32 +136,41 @@ public class VideoController : MonoBehaviour
 		m_RewardedVideoAd.AdFailedToLoad += (instance, errorCode) => {
 			// 広告ロード失敗のコールバック
 			m_Status = "RewardedVideoAd.AdFailedToLoad";
+			Debug.Log ("Rewarded AdFailedToLoad");
 		};
 		m_RewardedVideoAd.AdFailedToPlay += (instance) => {
 			// 再生失敗のコールバック
 			m_Status = "RewardedVideoAd.AdFailedToPlay";
+			Debug.Log ("Rewarded AdFailedToPlay");
 		};
 		m_RewardedVideoAd.AdShown += (instance) => {
 			// 広告表示のコールバック
+			Debug.Log ("Rewarded AdShown");
 		};
 		m_RewardedVideoAd.AdStarted += (instance) => {
 			// 再生開始のコールバック
+			Debug.Log ("Rewarded AdStarted");
 		};
 		m_RewardedVideoAd.AdStopped += (instance) => {
 			// 再生中断のコールバック
+			Debug.Log ("Rewarded AdStopped");
 		};
 		m_RewardedVideoAd.AdCompleted += (instance) => {
 			// 再生完了のコールバック
+			Debug.Log ("Rewarded AdCompleted");
 		};
 		m_RewardedVideoAd.AdClicked += (instance) => {
 			// 広告クリックのコールバック
+			Debug.Log ("Rewarded AdClicked");
 		};
 		m_RewardedVideoAd.InformationClicked += (instance) => {
 			// オプトアウトクリックのコールバック
+			Debug.Log ("Rewarded InformationClicked");
 		};
 		m_RewardedVideoAd.AdClosed += (instance) => {
 			// 広告クローズのコールバック
 			m_Status = "RewardedVideoAd.AdClosed";
+			Debug.Log ("Rewarded AdClosed");
 		};
 		m_RewardedVideoAd.Rewarded += (instance, rewardedItem) => {
 			// リワード報酬のコールバック
@@ -180,6 +199,7 @@ public class VideoController : MonoBehaviour
 		if (m_RewardedVideoAd != null) {
 			m_RewardedVideoAd.Release ();
 			m_RewardedVideoAd = null;
+			Debug.Log ("ReleaseReward");
 		}
 	}
 
