@@ -9,6 +9,5 @@ var searchData=
   ['invalid_5fresponse_5ftype_6',['INVALID_RESPONSE_TYPE',['../namespace_nend_unity_plugin_1_1_common.html#a40ce9dbd139cba0f773d05a1a20684d7a8f6575bd42a0331283412beeb9ac0895',1,'NendUnityPlugin.Common.INVALID_RESPONSE_TYPE()'],['../namespace_nend_unity_plugin_1_1_common.html#a9bcb251827acb8ae5f3a35fc9de7195ea8f6575bd42a0331283412beeb9ac0895',1,'NendUnityPlugin.Common.INVALID_RESPONSE_TYPE()']]],
   ['isautoreloadenabled_7',['IsAutoReloadEnabled',['../class_nend_unity_plugin_1_1_a_d_1_1_nend_ad_interstitial.html#a13a4de8c511e819b1c8db7607b237725',1,'NendUnityPlugin::AD::NendAdInterstitial']]],
   ['isloaded_8',['IsLoaded',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a8a93d3dba5d319fe994a87cad17aaeea',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
-  ['islocationenabled_9',['IsLocationEnabled',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_video.html#a3b7e1b2e1b3e066cb801af31a6cfe180',1,'NendUnityPlugin::AD::Video::NendAdVideo']]],
-  ['ismutestartplaying_10',['IsMuteStartPlaying',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_interstitial_video.html#aa54a119edf798fdaca1a991f63020435',1,'NendUnityPlugin::AD::Video::NendAdInterstitialVideo']]]
+  ['ismutestartplaying_9',['IsMuteStartPlaying',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_interstitial_video.html#aa54a119edf798fdaca1a991f63020435',1,'NendUnityPlugin::AD::Video::NendAdInterstitialVideo']]]
 ];
