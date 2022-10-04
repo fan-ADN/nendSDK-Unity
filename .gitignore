@@ -21,3 +21,5 @@ NendUnitySample/ProjectSettings/AndroidResolverDependencies.xml
 NendUnitySample/.vs/
 NendUnitySample/Assets/ExternalDependencyManager/
 NendUnitySample/Assets/ExternalDependencyManager.*
+NendUnitySample/.vscode/
+NendUnitySample/Build/
