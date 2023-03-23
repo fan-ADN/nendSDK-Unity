@@ -70,9 +70,9 @@ public class SecondScene : BaseScene
 	{
 		yield return new WaitForSeconds (0.5f);
 #if UNITY_IOS
-		NendAdInterstitial.Instance.Show("213208");
+		NendAdInterstitial.Instance.Show(213208);
 #elif UNITY_ANDROID
-		NendAdInterstitial.Instance.Show("213206");
+		NendAdInterstitial.Instance.Show(213206);
 #endif
 	}
 
