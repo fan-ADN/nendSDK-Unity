@@ -33,23 +33,23 @@ public class TitleScene : MonoBehaviour
 
 	private IEnumerator LoadAd ()
 	{
+		int spotId = 0;
 		string apiKey = "";
-		string spotId = "";
 
 #if UNITY_IOS
+		spotId = 213208;
 		apiKey = "308c2499c75c4a192f03c02b2fcebd16dcb45cc9";
-		spotId = "213208";
 		Handheld.SetActivityIndicatorStyle(UnityEngine.iOS.ActivityIndicatorStyle.Gray);
 #elif UNITY_ANDROID
+		spotId = 213206;
 		apiKey = "8c278673ac6f676dae60a1f56d16dad122e23516";
-		spotId = "213206";
 		Handheld.SetActivityIndicatorStyle(AndroidActivityIndicatorStyle.Small);
 #endif
 
 		Handheld.StartActivityIndicator ();
 		yield return new WaitForSeconds (0.0f);
 
-		NendAdInterstitial.Instance.Load (apiKey, spotId);
+		NendAdInterstitial.Instance.Load (spotId, apiKey);
 	}
 
 	private void ReloadAd ()

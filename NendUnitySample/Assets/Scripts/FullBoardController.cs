@@ -15,9 +15,9 @@ public class FullBoardController : MonoBehaviour
 	void Start ()
 	{
 		#if UNITY_ANDROID && !UNITY_EDITOR
-		m_Ad = NendAdFullBoard.NewFullBoardAd ("485520", "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff");
+		m_Ad = NendAdFullBoard.NewFullBoardAd (485520, "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff");
 		#elif UNITY_IOS && !UNITY_EDITOR
-		m_Ad = NendAdFullBoard.NewFullBoardAd ("485504", "30fda4b3386e793a14b27bedb4dcd29f03d638e5");
+		m_Ad = NendAdFullBoard.NewFullBoardAd (485504, "30fda4b3386e793a14b27bedb4dcd29f03d638e5");
 		#else
 		return;
 		#endif

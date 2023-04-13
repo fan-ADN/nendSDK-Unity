@@ -12,13 +12,19 @@ public class VideoController : MonoBehaviour
 	private NendAdRewardedVideo m_RewardedVideoAd;
 
 	#if !UNITY_EDITOR && UNITY_IOS
-	private string interstitialSpotId = "802557", interstitialApiKey = "b6a97b05dd088b67f68fe6f155fb3091f302b48b";
-	private string rewardSpotId = "802555", rewardApiKey = "ca80ed7018734d16787dbda24c9edd26c84c15b8";
-	private string fallbackSpotId = "485504", fallbackApiKey = "30fda4b3386e793a14b27bedb4dcd29f03d638e5";
+	private int interstitialSpotId = 802557;
+	private string interstitialApiKey = "b6a97b05dd088b67f68fe6f155fb3091f302b48b";
+	private int rewardSpotId = 802555;
+	private string rewardApiKey = "ca80ed7018734d16787dbda24c9edd26c84c15b8";
+	private int fallbackSpotId = 485504;
+	private string fallbackApiKey = "30fda4b3386e793a14b27bedb4dcd29f03d638e5";
 	#else
-	private string interstitialSpotId = "802559", interstitialApiKey = "e9527a2ac8d1f39a667dfe0f7c169513b090ad44";
-	private string rewardSpotId = "802558", rewardApiKey = "a6eb8828d64c70630fd6737bd266756c5c7d48aa";
-	private string fallbackSpotId = "485520", fallbackApiKey = "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff";
+	private int interstitialSpotId = 802559;
+	private string interstitialApiKey = "e9527a2ac8d1f39a667dfe0f7c169513b090ad44";
+	private int rewardSpotId = 802558;
+	private string rewardApiKey = "a6eb8828d64c70630fd6737bd266756c5c7d48aa";
+	private int fallbackSpotId = 485520;
+	private string fallbackApiKey = "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff";
 	#endif
 
 	// Use this for initialization
@@ -41,15 +47,6 @@ public class VideoController : MonoBehaviour
 	{
 		m_InterstitialVideoAd = NendAdInterstitialVideo.NewVideoAd (interstitialSpotId, interstitialApiKey);
 
-		NendAdUserFeature userFeature = NendAdUserFeature.NewNendAdUserFeature ();
-		userFeature.gender = NendAdUserFeature.Gender.Female;
-		userFeature.SetBirthday (1985, 12, 31);
-		userFeature.age = 10;
-		userFeature.AddCustomFeature ("someString", "TestText");
-		userFeature.AddCustomFeature ("someInt", 1);
-		userFeature.AddCustomFeature ("someDouble", 23.4);
-		userFeature.AddCustomFeature ("someBool", true);
-		m_InterstitialVideoAd.UserFeature = userFeature;
         m_InterstitialVideoAd.IsMuteStartPlaying = false;
 		m_InterstitialVideoAd.AddFallbackFullboard (fallbackSpotId, fallbackApiKey);
 
