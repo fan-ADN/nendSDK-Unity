@@ -54,10 +54,10 @@ var searchData=
   ['nenderrorcode_51',['NendErrorCode',['../namespace_nend_unity_plugin_1_1_common.html#a9bcb251827acb8ae5f3a35fc9de7195e',1,'NendUnityPlugin::Common']]],
   ['nendunityplugin_52',['NendUnityPlugin',['../namespace_nend_unity_plugin.html',1,'']]],
   ['nendutils_53',['NendUtils',['../class_nend_unity_plugin_1_1_common_1_1_nend_utils.html',1,'NendUnityPlugin::Common']]],
-  ['newclient_54',['NewClient',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_native_ad_client_factory.html#a3edb2c19deb21737d067dc3ed3de8a59',1,'NendUnityPlugin::AD::Native::NativeAdClientFactory']]],
-  ['newfullboardad_55',['NewFullBoardAd',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#a71388d8ba2c1b82c898fb669dbcbeef1',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
+  ['newclient_54',['NewClient',['../class_nend_unity_plugin_1_1_a_d_1_1_native_1_1_native_ad_client_factory.html#ab90fc073770ce286fa796afffbbc7dea',1,'NendUnityPlugin::AD::Native::NativeAdClientFactory']]],
+  ['newfullboardad_55',['NewFullBoardAd',['../class_nend_unity_plugin_1_1_a_d_1_1_full_board_1_1_nend_ad_full_board.html#ac9354b99d230c0c4946e8d5da4e80e2d',1,'NendUnityPlugin::AD::FullBoard::NendAdFullBoard']]],
   ['newnendaduserfeature_56',['NewNendAdUserFeature',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_user_feature.html#a6647923bb70366de84227249e3350e41',1,'NendUnityPlugin::AD::Video::NendAdUserFeature']]],
-  ['newvideoad_57',['NewVideoAd',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_interstitial_video.html#aaa125a6ffe81da15b1f9616652059fa0',1,'NendUnityPlugin.AD.Video.NendAdInterstitialVideo.NewVideoAd()'],['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_rewarded_video.html#a5b9066305f4d3182a4df1178e427e90f',1,'NendUnityPlugin.AD.Video.NendAdRewardedVideo.NewVideoAd()']]],
+  ['newvideoad_57',['NewVideoAd',['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_interstitial_video.html#a24c85dabb40e19efa00d48541edc4bff',1,'NendUnityPlugin.AD.Video.NendAdInterstitialVideo.NewVideoAd()'],['../class_nend_unity_plugin_1_1_a_d_1_1_video_1_1_nend_ad_rewarded_video.html#a4887e3172552e3ca4ef3f1889f13df0b',1,'NendUnityPlugin.AD.Video.NendAdRewardedVideo.NewVideoAd()']]],
   ['utils_58',['Utils',['../namespace_nend_unity_plugin_1_1_a_d_1_1_native_1_1_utils.html',1,'NendUnityPlugin::AD::Native']]],
   ['video_59',['Video',['../namespace_nend_unity_plugin_1_1_a_d_1_1_video.html',1,'NendUnityPlugin::AD']]]
 ];
