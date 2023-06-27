@@ -12,17 +12,17 @@ public class VideoController : MonoBehaviour
 	private NendAdRewardedVideo m_RewardedVideoAd;
 
 	#if !UNITY_EDITOR && UNITY_IOS
-	private int interstitialSpotId = 802557;
-	private string interstitialApiKey = "b6a97b05dd088b67f68fe6f155fb3091f302b48b";
-	private int rewardSpotId = 802555;
-	private string rewardApiKey = "ca80ed7018734d16787dbda24c9edd26c84c15b8";
+	[SerializeField] private int interstitialSpotId = 802557;
+	[SerializeField] private string interstitialApiKey = "b6a97b05dd088b67f68fe6f155fb3091f302b48b";
+	[SerializeField] private int rewardSpotId = 802555;
+	[SerializeField] private string rewardApiKey = "ca80ed7018734d16787dbda24c9edd26c84c15b8";
 	private int fallbackSpotId = 485504;
 	private string fallbackApiKey = "30fda4b3386e793a14b27bedb4dcd29f03d638e5";
 	#else
-	private int interstitialSpotId = 802559;
-	private string interstitialApiKey = "e9527a2ac8d1f39a667dfe0f7c169513b090ad44";
-	private int rewardSpotId = 802558;
-	private string rewardApiKey = "a6eb8828d64c70630fd6737bd266756c5c7d48aa";
+	[SerializeField] private int interstitialSpotId = 802559;
+	[SerializeField] private string interstitialApiKey = "e9527a2ac8d1f39a667dfe0f7c169513b090ad44";
+	[SerializeField] private int rewardSpotId = 802558;
+	[SerializeField] private string rewardApiKey = "a6eb8828d64c70630fd6737bd266756c5c7d48aa";
 	private int fallbackSpotId = 485520;
 	private string fallbackApiKey = "a88c0bcaa2646c4ef8b2b656fd38d6785762f2ff";
 	#endif
